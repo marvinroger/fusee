@@ -1,1 +1,1 @@
-module.exports = require('@marvinroger/dev-core/prettier').getPrettierConfig()
+module.exports = require('@marvinroger/dev-core').getPrettierConfig()
