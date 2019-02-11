@@ -26,9 +26,13 @@ yarn lint
 
 Lint the code with Prettier and ESLint, trying to fix what's fixable.
 
+---
+
 ```bash
 yarn test
 ```
+
+---
 
 Test the code with Jest.
 
