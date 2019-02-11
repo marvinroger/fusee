@@ -1,1 +1,1 @@
-module.exports = require("@marvinroger/dev-core/eslint");
+module.exports = require('@marvinroger/dev-core/eslint')
