@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
 
@@ -7,4 +7,12 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/@typescript-eslint',
   ],
+}
+
+function getEslintConfig() {
+  return config
+}
+
+module.exports = {
+  getEslintConfig,
 }

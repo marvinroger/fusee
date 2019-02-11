@@ -3,9 +3,9 @@
 const path = require('path')
 const program = require('commander')
 
-const pkg = require('../package')
-
 const { die, runBin } = require('./utils')
+
+const pkg = require('../../package')
 
 const SUPPORTED_COMMANDS = ['eslint', 'prettier', 'typedoc', 'mrm']
 
@@ -18,7 +18,7 @@ program.version(pkg.version)
 program
   .command('init')
   .description('initialize a project')
-  .action(async (cmd, args) => {
+  .action(async () => {
     await runBin('mrm', ['package', 'files', '--dir', TASKS_DIR])
   })
 
