@@ -1,0 +1,22 @@
+### App ###
+
+/pkg/
+
+### Node ###
+
+# Logs
+
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+
+node_modules/
+
+### OS ###
+
+.DS_Store
+coverage/

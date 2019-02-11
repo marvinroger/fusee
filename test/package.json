@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "generate-docs": "dev-core generate-docs",
+    "lint": "dev-core lint",
+    "test": "dev-core test"
+  }
+}
