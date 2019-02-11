@@ -1,6 +1,6 @@
 const { install, packageJson } = require('mrm-core')
 
-const pkg = require('../../package')
+const pkg = require('../../../package')
 
 function task() {
   install({ '@marvinroger/dev-core': `^${pkg.version}` }, { yarn: true })

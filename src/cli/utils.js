@@ -12,7 +12,7 @@ async function runBin(command, args = [], failIfFail = true) {
   return new Promise(resolve => {
     const commandPath = path.resolve(
       __dirname,
-      '../node_modules/.bin/',
+      '../../node_modules/.bin/',
       command + (isWin ? '.cmd' : '')
     )
 
