@@ -1,4 +1,0 @@
-{
-  "extends": "@marvinroger/dev-core/tsconfig",
-  "include": ["src/index.ts"]
-}

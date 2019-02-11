@@ -1,1 +1,1 @@
-module.exports = require("@marvinroger/dev-core/jest");
+module.exports = require('@marvinroger/dev-core/jest')
