@@ -6,6 +6,7 @@ const FILES = [
   '.gitignore',
   '.prettierrc.js',
   'jest.config.js',
+  'lint-staged.config.js',
   'tsconfig.json',
 ]
 

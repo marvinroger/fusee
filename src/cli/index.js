@@ -68,6 +68,13 @@ program
     ])
   })
 
+program
+  .command('lint-staged')
+  .description('lint-staged hook')
+  .action(async () => {
+    await runBin('lint-staged')
+  })
+
 program.on('command:*', function() {
   console.error(
     'Invalid command: %s\nSee --help for a list of available commands.',
