@@ -1,12 +1,17 @@
 const { defaults } = require('jest-config')
 
+const BUILT_PACKAGE_DIR = '/pkg/'
+
 const config = {
   preset: 'ts-jest',
 
   testPathIgnorePatterns: [
     ...defaults.testPathIgnorePatterns,
-    '/pkg/',
-    '/dist/',
+    BUILT_PACKAGE_DIR,
+  ],
+  modulePathIgnorePatterns: [
+    ...defaults.modulePathIgnorePatterns,
+    BUILT_PACKAGE_DIR,
   ],
 }
 
