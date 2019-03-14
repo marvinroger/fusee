@@ -283,10 +283,10 @@
     "@types/istanbul-lib-coverage" "^1.1.0"
     "@types/yargs" "^12.0.9"
 
-"@marvinroger/dev-core@^1.4.0":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@marvinroger/dev-core/-/dev-core-1.7.1.tgz#b3627d28f0af216a450e91c3e30b2e0850bfcb49"
-  integrity sha512-WPBlXK8YkwHVHy6c6sEP/DhoAy2SMpLCD+9gReie4gpMVgtH9MIN7vhz4TxsmeNKnvbwALSUAzccQ/uq4bfW/w==
+"@marvinroger/dev-core@^1.7.1":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@marvinroger/dev-core/-/dev-core-1.7.2.tgz#581723f6e6031ae8611d8caffd0b2b0ae45a1a84"
+  integrity sha512-1CLks1PaQaOijXaXzppnjvGEh1jeCol/mVfiM6SBlctboBv6yDMH6iVXU1qfR/Es7RHh3di5g7+REFwflJL1Rw==
   dependencies:
     "@types/jest" "^24.0.0"
     "@typescript-eslint/eslint-plugin" "^1.3.0"
@@ -301,7 +301,7 @@
     mrm "^1.2.1"
     mrm-core "^3.3.0"
     prettier "^1.16.4"
-    ts-jest "^23.10.5"
+    ts-jest "^24.0.0"
     typedoc "^0.14.2"
     typescript "^3.3.3"
 
@@ -4844,21 +4844,6 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
-
-ts-jest@^23.10.5:
-  version "23.10.5"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-23.10.5.tgz#cdb550df4466a30489bf70ba867615799f388dd5"
-  integrity sha512-MRCs9qnGoyKgFc8adDEntAOP64fWK1vZKnOYU1o2HxaqjdJvGqmkLCPCnVq1/If4zkUmEjKPnCiUisTrlX2p2A==
-  dependencies:
-    bs-logger "0.x"
-    buffer-from "1.x"
-    fast-json-stable-stringify "2.x"
-    json5 "2.x"
-    make-error "1.x"
-    mkdirp "0.x"
-    resolve "1.x"
-    semver "^5.5"
-    yargs-parser "10.x"
 
 ts-jest@^24.0.0:
   version "24.0.0"

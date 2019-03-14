@@ -57,6 +57,7 @@ program
       'ES6',
       '--mode',
       'file',
+      '--ignoreCompilerErrors',
       '--excludePrivate',
       '--excludeProtected',
       '--excludeNotExported',

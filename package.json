@@ -1,6 +1,6 @@
 {
   "name": "@marvinroger/dev-core",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "main": "./src/index.js",
   "license": "UNLICENSED",
   "types": "./src/index.d.ts",
@@ -30,7 +30,7 @@
     "typescript": "^3.3.3"
   },
   "devDependencies": {
-    "@marvinroger/dev-core": "^1.4.0"
+    "@marvinroger/dev-core": "^1.7.1"
   },
   "files": [
     "src/",
