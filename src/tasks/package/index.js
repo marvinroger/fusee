@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const { install, packageJson } = require('mrm-core')
 
 const pkg = require('../../../package')
 
 function task() {
-  const file = packageJson()
+  packageJson()
     .setScript('generate-docs', 'dev-core generate-docs')
     .setScript('lint', 'dev-core lint')
     .setScript('test', 'dev-core test')

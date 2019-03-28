@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const { copyFiles } = require('mrm-core')
 
 const FILES = [

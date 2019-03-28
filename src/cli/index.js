@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const path = require('path')
 const program = require('commander')
 
@@ -76,7 +78,7 @@ program
     await runBin('lint-staged')
   })
 
-program.on('command:*', function() {
+program.on('command:*', () => {
   console.error(
     'Invalid command: %s\nSee --help for a list of available commands.',
     program.args.join(' ')

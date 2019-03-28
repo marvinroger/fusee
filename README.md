@@ -7,7 +7,7 @@ It makes use of the following stack:
 - Prettier for code style linting and formatting
 - ESLint for JS/TS linting
 - Jest for testing
-- [TO-DO] Husky / lint-staged for Git hooks
+- Husky / lint-staged for Git hooks
 
 ## Install
 

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const { getEslintConfig } = require('./eslint')
 const { getJestConfig } = require('./jest')
 const { getLintStagedConfig } = require('./lint-staged')

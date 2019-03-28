@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const { defaults } = require('jest-config')
 
 const BUILT_PACKAGE_DIR = '/pkg/'
