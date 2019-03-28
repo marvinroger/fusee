@@ -1,6 +1,7 @@
 ### App ###
 
 /pkg/
+/dist/
 
 ### Node ###
 

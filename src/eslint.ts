@@ -9,10 +9,9 @@ const config = {
   ],
 }
 
-function getEslintConfig() {
+/**
+ * Get the ESLint configuration object
+ */
+export function getEslintConfig(): typeof config {
   return config
-}
-
-module.exports = {
-  getEslintConfig,
 }

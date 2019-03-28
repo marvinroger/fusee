@@ -1,16 +1,18 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-
-const { spawn } = require('child_process')
-const path = require('path')
+import { spawn } from 'child_process'
+import * as path from 'path'
 
 const isWin = process.platform === 'win32'
 
-function die(msg) {
+export function die(msg: string): void {
   console.error(msg)
   process.exit(1)
 }
 
-async function runBin(command, args = [], failIfFail = true) {
+export async function runBin(
+  command: string,
+  args: string[] = [],
+  failIfFail: boolean = true
+): Promise<number> {
   return new Promise(resolve => {
     const commandPath = path.resolve(
       __dirname,
@@ -30,9 +32,4 @@ async function runBin(command, args = [], failIfFail = true) {
       }
     })
   })
-}
-
-module.exports = {
-  die,
-  runBin,
 }

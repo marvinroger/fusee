@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-
-const { defaults } = require('jest-config')
+import { defaults } from 'jest-config'
 
 const BUILT_PACKAGE_DIR = '/pkg/'
 
@@ -17,10 +15,9 @@ const config = {
   ],
 }
 
-function getJestConfig() {
+/**
+ * Get the Jest configuration object
+ */
+export function getJestConfig(): typeof config {
   return config
-}
-
-module.exports = {
-  getJestConfig,
 }

@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 
-/* eslint-disable @typescript-eslint/no-var-requires */
+import * as path from 'path'
+import * as program from 'commander'
 
-const path = require('path')
-const program = require('commander')
+import { die, runBin } from './utils'
 
-const { die, runBin } = require('./utils')
-
-const pkg = require('../../package')
+// @ts-ignore
+import pkg from '../../package.json'
 
 const SUPPORTED_COMMANDS = ['eslint', 'prettier', 'typedoc', 'mrm']
 
@@ -27,7 +26,7 @@ program
 program
   .command('run <cmd> [args...]')
   .description('run the given cmd')
-  .action(async (cmd, args) => {
+  .action(async (cmd: string, args: string[]) => {
     if (!SUPPORTED_COMMANDS.includes(cmd)) {
       die(`${cmd} is not supported`)
     }
