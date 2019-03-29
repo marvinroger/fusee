@@ -46,7 +46,7 @@ program
   .command('test')
   .description('run the tests')
   .action(async () => {
-    await runBin('jest')
+    await runBin('jest', ['--passWithNoTests'])
   })
 
 program

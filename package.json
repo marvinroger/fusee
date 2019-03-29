@@ -1,13 +1,14 @@
 {
   "name": "@marvinroger/dev-core",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "main": "./dist/index.js",
   "license": "UNLICENSED",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc --project ./tsconfig.self.json",
+    "build": "rimraf dist/ && tsc --project ./tsconfig.self.json",
     "lint": "dev-core lint",
-    "prepublish": "yarn build"
+    "test": "dev-core test",
+    "prepublishOnly": "yarn lint && yarn build && yarn test"
   },
   "bin": {
     "dev-core": "./dist/cli/index.js"
@@ -30,7 +31,8 @@
     "typescript": "^3.3.3"
   },
   "devDependencies": {
-    "@marvinroger/dev-core": "^1.7.1"
+    "@marvinroger/dev-core": "^1.7.1",
+    "rimraf": "^2.6.3"
   },
   "husky": {
     "hooks": {

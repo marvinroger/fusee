@@ -8,6 +8,8 @@ function task(): void {
     .setScript('generate-docs', 'dev-core generate-docs')
     .setScript('lint', 'dev-core lint')
     .setScript('test', 'dev-core test')
+    .setScript('build', 'echo TODO')
+    .setScript('prepublishOnly', 'yarn lint && yarn build && yarn test')
     .set('husky', {
       hooks: {
         'pre-commit': 'dev-core lint-staged',
