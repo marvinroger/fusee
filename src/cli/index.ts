@@ -6,7 +6,7 @@ import * as program from 'commander'
 import { die, runBin } from './utils'
 
 // @ts-ignore
-import pkg from '../../package.json'
+import * as pkg from '../../package.json'
 
 const SUPPORTED_COMMANDS = ['eslint', 'prettier', 'typedoc', 'mrm']
 
@@ -35,11 +35,11 @@ program
   })
 
 program
-  .command('lint')
+  .command('lint [files...]')
   .description('lint and try to fix the code')
-  .action(async () => {
-    await runBin('eslint', ['--fix', SRC_GLOB])
-    await runBin('prettier', ['--write', SRC_GLOB])
+  .action(async (files: string[]) => {
+    await runBin('eslint', ['--fix', SRC_GLOB, ...files])
+    await runBin('prettier', ['--write', SRC_GLOB, ...files])
   })
 
 program

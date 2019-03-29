@@ -4,14 +4,12 @@
     "declaration": true,
     "target": "es2018",
     "module": "commonjs",
-    "outDir": "./dist/"
+    "outDir": "./dist/",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["types-local/*"]
+    }
   },
-  "include": [
-    "./src/index.ts",
-    "./src/cli/index.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/__tests__/*"
-  ]
+  "include": ["./src/index.ts", "./src/cli/index.ts", "./src/tasks/**/*.ts"],
+  "exclude": ["node_modules", "**/__tests__/*"]
 }

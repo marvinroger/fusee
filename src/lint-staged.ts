@@ -1,5 +1,7 @@
 const config = {
-  '*.{ts,tsx,js,jsx}': 'dev-core lint',
+  linters: {
+    '*.{ts,tsx,js,jsx}': ['dev-core lint', 'git add'],
+  },
 }
 
 /**

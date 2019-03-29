@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+import { install, packageJson } from 'mrm-core'
 
-const { install, packageJson } = require('mrm-core')
+// @ts-ignore
+import * as pkg from '../../../package.json'
 
-const pkg = require('../../../package')
-
-function task() {
+function task(): void {
   packageJson()
     .setScript('generate-docs', 'dev-core generate-docs')
     .setScript('lint', 'dev-core lint')
@@ -26,4 +25,4 @@ function task() {
 }
 
 task.description = 'Install @marvinroger/dev-core and add scripts'
-module.exports = task
+export = task
