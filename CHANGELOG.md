@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.1](https://github.com/marvinroger/js-dev-core/compare/v1.9.0...v1.9.1) (2019-04-12)
+
+
+### Bug Fixes
+
+* commit-msg hook param passing ([c5e9e1f](https://github.com/marvinroger/js-dev-core/commit/c5e9e1f))
+
+
+
 # [1.9.0](https://github.com/marvinroger/js-dev-core/compare/v1.8.3...v1.9.0) (2019-04-12)
 
 
