@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.2](https://github.com/marvinroger/js-dev-core/compare/v1.9.1...v1.9.2) (2019-04-12)
+
+
+### Bug Fixes
+
+* allow expressions not having an explicit return type ([a444c31](https://github.com/marvinroger/js-dev-core/commit/a444c31))
+
+
+
 ## [1.9.1](https://github.com/marvinroger/js-dev-core/compare/v1.9.0...v1.9.1) (2019-04-12)
 
 

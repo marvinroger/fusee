@@ -1,6 +1,6 @@
 {
   "name": "@marvinroger/dev-core",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "main": "./dist/index.js",
   "license": "UNLICENSED",
   "types": "./dist/index.d.ts",
