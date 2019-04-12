@@ -1,8 +1,16 @@
 {
   "name": "@marvinroger/dev-core",
   "version": "1.9.2",
+  "description": "This module provides tooling to lint, format, test and write JS modules.",
+  "homepage": "https://github.com/marvinroger/js-dev-core",
+  "bugs": "https://github.com/marvinroger/js-dev-core/issues",
+  "author": {
+    "name": "Marvin ROGER",
+    "email": "dev@marvinroger.fr",
+    "url": "https://www.marvinroger.fr"
+  },
+  "license": "GPL-3.0",
   "main": "./dist/index.js",
-  "license": "UNLICENSED",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist/ && tsc --project ./tsconfig.self.json",
