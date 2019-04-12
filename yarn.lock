@@ -431,9 +431,9 @@
     rimraf "^2.5.2"
 
 "@marvinroger/dev-core@^1.7.1":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@marvinroger/dev-core/-/dev-core-1.9.0.tgz#6737af8a1191905f98e278780d5f99288a56c035"
-  integrity sha512-CO6Fo9079B9SYKa88Ol6qNqjXVb71D9RYeKyT2R4zZS/gsukgRnDSLqhx/q1yvgyzOBRoBbaD/zMymUQMzHYZg==
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/@marvinroger/dev-core/-/dev-core-1.9.1.tgz#01e490e6a3e286b49adb50fe225166e97c75ac8f"
+  integrity sha512-efyttIakxPbmEsO6FUFgkWmtAQX2gw36n5/TjqnisKK2LdtZRM42NMtFn3yHNdCxT6Q/Pok7Hx65AWe0cISQuw==
   dependencies:
     "@commitlint/cli" "^7.5.2"
     "@commitlint/config-conventional" "^7.5.0"

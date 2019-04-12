@@ -7,6 +7,15 @@ const config = {
     'plugin:prettier/recommended',
     'prettier/@typescript-eslint',
   ],
+
+  rules: {
+    '@typescript-eslint/explicit-function-return-type': [
+      'warn',
+      {
+        allowExpressions: true,
+      },
+    ],
+  },
 }
 
 /**
