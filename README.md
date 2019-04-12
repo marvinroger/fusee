@@ -4,10 +4,13 @@ This module provides tooling to lint, format, test and write JS modules.
 
 It makes use of the following stack:
 
-- Prettier for code style linting and formatting
-- ESLint for JS/TS linting
-- Jest for testing
-- Husky / lint-staged for Git hooks
+- [Prettier](https://github.com/prettier/prettier) for code style linting and formatting
+- [ESLint](https://eslint.org/) for TS linting
+- [Jest](https://jestjs.io/) for testing
+- [TypeDoc](https://typedoc.org/) for documentation generation
+- [Husky](https://github.com/typicode/husky) / [lint-staged](https://github.com/okonet/lint-staged) for Git hooks
+- [Commitizen](https://github.com/commitizen/cz-cli) / [commitlint](https://github.com/conventional-changelog/commitlint) for Git commit messages ([Conventional Commits](https://www.conventionalcommits.org) format)
+- [Standard Version](https://github.com/conventional-changelog/standard-version) for release versioning and CHANGELOG generation
 
 ## Install
 
@@ -42,4 +45,20 @@ yarn generate-docs
 
 Generate the HTML docs from the TypeScript code, into the `docs/` directory.
 
-**Note:** Every single exported method will be documented (even those which are not exported from the entry-point). To ignore such methods, add a `@hidden` annotation.
+---
+
+```bash
+yarn commit
+```
+
+Commit with a [Conventional Commits](https://www.conventionalcommits.org) compatible format.
+
+---
+
+```bash
+yarn release
+```
+
+Bump `package.json` according to the commits, update `CHANGELOG.md` and tag a new release.
+
+**Note:** Due to a TypeDoc restriction, every single exported method will be documented (even if not exported from the entry-point). To ignore such methods, add a `@hidden` annotation.

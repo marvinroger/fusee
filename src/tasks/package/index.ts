@@ -5,16 +5,17 @@ import * as pkg from '../../../package.json'
 
 function task(): void {
   packageJson()
+    .setScript('build', 'echo TODO')
     .setScript('generate-docs', 'dev-core generate-docs')
     .setScript('lint', 'dev-core lint')
     .setScript('test', 'dev-core test')
-    .setScript('build', 'echo TODO')
+    .setScript('commit', 'dev-core run git-cz')
+    .setScript('release', 'dev-core run standard-version')
     .setScript('prepublishOnly', 'yarn lint && yarn build && yarn test')
-    .set('husky', {
-      hooks: {
-        'pre-commit': 'dev-core lint-staged',
-      },
+    .set('config.commitizen', {
+      path: 'cz-conventional-changelog',
     })
+
     .save()
 
   install(

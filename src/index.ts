@@ -1,4 +1,6 @@
+export { getCommitlintConfig } from './configs/commitlint'
 export { getEslintConfig } from './configs/eslint'
+export { getHuskyConfig } from './configs/husky'
 export { getJestConfig } from './configs/jest'
 export { getLintStagedConfig } from './configs/lint-staged'
 export { getPrettierConfig } from './configs/prettier'

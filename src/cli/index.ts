@@ -8,7 +8,17 @@ import { die, runBin } from './utils'
 // @ts-ignore
 import * as pkg from '../../package.json'
 
-const SUPPORTED_COMMANDS = ['eslint', 'prettier', 'typedoc', 'mrm']
+const SUPPORTED_COMMANDS = [
+  'eslint',
+  'prettier',
+  'typedoc',
+  'mrm',
+  'commitlint',
+  'git-cz',
+  'jest',
+  'lint-staged',
+  'standard-version',
+]
 
 const SRC_GLOB = 'src/**/*.ts'
 
@@ -68,13 +78,6 @@ program
       'docs/',
       'src/',
     ])
-  })
-
-program
-  .command('lint-staged')
-  .description('lint-staged hook')
-  .action(async () => {
-    await runBin('lint-staged')
   })
 
 program.on('command:*', () => {
