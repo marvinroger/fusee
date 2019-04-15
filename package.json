@@ -39,7 +39,7 @@
     "lint-staged": "^8.1.4",
     "mrm": "^1.2.1",
     "mrm-core": "^3.3.0",
-    "prettier": "^1.16.4",
+    "prettier": "^1.17.0",
     "standard-version": "^5.0.2",
     "ts-jest": "^24.0.0",
     "typedoc": "^0.14.2",
