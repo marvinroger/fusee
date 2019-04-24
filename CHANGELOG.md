@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.3](https://github.com/marvinroger/js-dev-core/compare/v1.9.2...v1.9.3) (2019-04-24)
+
+
+### Bug Fixes
+
+* add eslint dependencies as peerDependencies ([89397f1](https://github.com/marvinroger/js-dev-core/commit/89397f1))
+
+
+
 ## [1.9.2](https://github.com/marvinroger/js-dev-core/compare/v1.9.1...v1.9.2) (2019-04-12)
 
 

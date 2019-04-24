@@ -1,6 +1,6 @@
 {
   "name": "@marvinroger/dev-core",
-  "version": "1.9.2",
+  "version": "1.9.3",
   "description": "This module provides tooling to lint, format, test and write JS modules.",
   "homepage": "https://github.com/marvinroger/js-dev-core",
   "bugs": "https://github.com/marvinroger/js-dev-core/issues",
