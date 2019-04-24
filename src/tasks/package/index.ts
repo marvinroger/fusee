@@ -21,7 +21,7 @@ function task(): void {
   install(
     {
       '@marvinroger/dev-core': `^${pkg.version}`,
-      husky: pkg.dependencies.husky,
+      ...pkg.peerDependencies,
     },
     { yarn: true }
   )
