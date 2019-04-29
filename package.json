@@ -41,12 +41,12 @@
     "typescript": "^3.4.4"
   },
   "devDependencies": {
-    "eslint-config-prettier": "^4.0.0",
+    "eslint-config-prettier": "^4.2.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "@marvinroger/dev-core": "^1.7.1",
+    "@marvinroger/dev-core": "^1.9.3",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
-    "husky": "^2.0.0",
+    "husky": "^2.1.0",
     "rimraf": "^2.6.3"
   },
   "peerDependencies": {
