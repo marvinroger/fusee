@@ -30,8 +30,8 @@
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.13.0",
-    "jest": "^24.1.0",
-    "lint-staged": "^8.1.4",
+    "jest": "^24.8.0",
+    "lint-staged": "^8.1.6",
     "mrm": "^1.2.1",
     "mrm-core": "^3.3.0",
     "prettier": "^1.17.0",
@@ -46,7 +46,7 @@
     "@marvinroger/dev-core": "^1.9.3",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
-    "husky": "^2.1.0",
+    "husky": "^2.2.0",
     "rimraf": "^2.6.3"
   },
   "peerDependencies": {
