@@ -1,12 +1,23 @@
-const config = {
-  linters: {
-    '*.{ts,tsx,js,jsx}': ['dev-core lint', 'git add'],
-  },
+interface LintStagedParams {
+  monorepo?: boolean
 }
+
+const defaultParams: LintStagedParams = {
+  monorepo: false,
+}
+
+const makeConfig = (params: LintStagedParams) => ({
+  linters: {
+    '*.{ts,tsx,js,jsx}': [
+      `dev-core lint${params.monorepo ? ' --monorepo' : ''}`,
+      'git add',
+    ],
+  },
+})
 
 /**
  * Get the lint-staged configuration object
  */
-export function getLintStagedConfig(): typeof config {
-  return config
+export function getLintStagedConfig(params: LintStagedParams = defaultParams) {
+  return makeConfig(params)
 }

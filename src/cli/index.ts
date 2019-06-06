@@ -18,7 +18,8 @@ const SUPPORTED_COMMANDS = [
   'standard-version',
 ]
 
-const SRC_GLOB = ['src/**/*.ts', 'packages/**/src/**/*.ts']
+const SRC_GLOB = 'src/**/*.ts'
+const SRC_GLOB_MONOREPO = 'packages/**/src/**/*.ts'
 
 const TASKS_DIR = path.resolve(__dirname, '../tasks')
 
@@ -44,10 +45,13 @@ program
 
 program
   .command('lint [files...]')
+  .option('--monorepo', 'Lint on a monorepo (packages/**)')
   .description('lint and try to fix the code')
-  .action(async (files: string[]) => {
-    await runBin('eslint', ['--fix', ...SRC_GLOB, ...files])
-    await runBin('prettier', ['--write', ...SRC_GLOB, ...files])
+  .action(async (files: string[], cmd: { monorepo?: boolean }) => {
+    const pattern = cmd.monorepo ? SRC_GLOB_MONOREPO : SRC_GLOB
+
+    await runBin('eslint', ['--fix', pattern, ...files])
+    await runBin('prettier', ['--write', pattern, ...files])
   })
 
 program
