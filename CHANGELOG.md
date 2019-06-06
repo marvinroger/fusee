@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.11.0"></a>
+# [1.11.0](https://github.com/marvinroger/js-dev-core/compare/v1.9.3...v1.11.0) (2019-06-06)
+
+
+### Bug Fixes
+
+* prevent eslint error because of unmatching pattern ([c06b7e0](https://github.com/marvinroger/js-dev-core/commit/c06b7e0))
+
+
+### Features
+
+* add support for monorepos ([f3813bf](https://github.com/marvinroger/js-dev-core/commit/f3813bf))
+
+
+
 <a name="1.10.0"></a>
 # [1.10.0](https://github.com/marvinroger/js-dev-core/compare/v1.9.3...v1.10.0) (2019-06-06)
 
