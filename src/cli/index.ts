@@ -1,12 +1,10 @@
 #!/usr/bin/env node
 
-import * as path from 'path'
 import * as program from 'commander'
-
-import { die, runBin } from './utils'
-
+import * as path from 'path'
 // @ts-ignore
 import * as pkg from '../../package.json'
+import { die, runBin } from './utils'
 
 const SUPPORTED_COMMANDS = [
   'eslint',
@@ -20,7 +18,7 @@ const SUPPORTED_COMMANDS = [
   'standard-version',
 ]
 
-const SRC_GLOB = 'src/**/*.ts'
+const SRC_GLOB = ['src/**/*.ts', 'packages/**/src/**/*.ts']
 
 const TASKS_DIR = path.resolve(__dirname, '../tasks')
 
@@ -48,8 +46,8 @@ program
   .command('lint [files...]')
   .description('lint and try to fix the code')
   .action(async (files: string[]) => {
-    await runBin('eslint', ['--fix', SRC_GLOB, ...files])
-    await runBin('prettier', ['--write', SRC_GLOB, ...files])
+    await runBin('eslint', ['--fix', ...SRC_GLOB, ...files])
+    await runBin('prettier', ['--write', ...SRC_GLOB, ...files])
   })
 
 program
