@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.10.0"></a>
+# [1.10.0](https://github.com/marvinroger/js-dev-core/compare/v1.9.3...v1.10.0) (2019-06-06)
+
+
+### Features
+
+* add support for monorepos ([eef8f6a](https://github.com/marvinroger/js-dev-core/commit/eef8f6a))
+
+
+
 ## [1.9.3](https://github.com/marvinroger/js-dev-core/compare/v1.9.2...v1.9.3) (2019-04-24)
 
 
