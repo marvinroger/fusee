@@ -1,6 +1,20 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.0.0](https://github.com/marvinroger/js-dev-core/compare/v1.11.0...v2.0.0) (2019-07-08)
+
+
+### Features
+
+* rename dev-core to fusee ([2d3536c](https://github.com/marvinroger/js-dev-core/commit/2d3536c))
+
+
+### BREAKING CHANGES
+
+* the npm package changes too
+
+
 
 <a name="1.11.0"></a>
 # [1.11.0](https://github.com/marvinroger/js-dev-core/compare/v1.9.3...v1.11.0) (2019-06-06)
