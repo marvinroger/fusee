@@ -1,1 +1,1 @@
-module.exports = require('@marvinroger/dev-core').getJestConfig()
+module.exports = require('@marvinroger/fusee').getJestConfig()

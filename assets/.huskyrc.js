@@ -1,1 +1,1 @@
-module.exports = require('@marvinroger/dev-core').getHuskyConfig()
+module.exports = require("@marvinroger/fusee").getHuskyConfig();

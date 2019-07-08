@@ -1,4 +1,4 @@
 {
-  "extends": "@marvinroger/dev-core/tsconfig",
+  "extends": "@marvinroger/fusee/tsconfig",
   "include": ["src/index.ts"]
 }

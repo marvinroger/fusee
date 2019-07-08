@@ -41,7 +41,7 @@
     "typescript": "^3.4.4"
   },
   "devDependencies": {
-    "@marvinroger/dev-core": "^1.11.0",
+    "@marvinroger/fusee": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
     "eslint-config-prettier": "^6.0.0",

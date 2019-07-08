@@ -1,1 +1,1 @@
-module.exports = require('@marvinroger/dev-core').getCommitlintConfig()
+module.exports = require("@marvinroger/fusee").getCommitlintConfig();
