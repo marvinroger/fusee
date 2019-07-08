@@ -425,9 +425,9 @@
     rimraf "^2.5.2"
 
 "@marvinroger/fusee@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@marvinroger/fusee/-/fusee-2.0.0.tgz#75032a478d7aeb776682efec79b7e2075ef05c44"
-  integrity sha512-27g6cv/3tnA7xPA58jT99vjpxZR6yedXVEvb9SGpQZXH1bEkG3/Gjf2HDp7tW70UjyKMpDkrmETbVHh5vn+1NA==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@marvinroger/fusee/-/fusee-2.0.1.tgz#1402fdb53db9637a17d54ec1fac29256a44cc6c1"
+  integrity sha512-LErURGEOXvzV9ADF1F9lcuEpajEphDiqynBLCYINLzgk3n3cD91T+cgTWC6joqGfkuOHeW2Djoak/m9pAqPIbg==
   dependencies:
     "@commitlint/cli" "^8.0.0"
     "@commitlint/config-conventional" "^8.0.0"
