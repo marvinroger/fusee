@@ -1,5 +1,5 @@
-import * as path from 'path'
 import { copyFiles } from 'mrm-core'
+import * as path from 'path'
 
 const ASSETS_DIR = path.resolve(__dirname, '../../../assets')
 
@@ -9,6 +9,7 @@ const FILES = [
   '.eslintrc.js',
   '.gitignore',
   '.huskyrc.js',
+  '.prettierignore',
   '.prettierrc.js',
   'jest.config.js',
   'lint-staged.config.js',
