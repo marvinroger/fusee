@@ -50,8 +50,13 @@ program
   .action(async (files: string[], cmd: { monorepo?: boolean }) => {
     const pattern = cmd.monorepo ? SRC_GLOB_MONOREPO : SRC_GLOB
 
-    await runBin('eslint', ['--fix', pattern, ...files])
-    await runBin('prettier', ['--write', pattern, ...files])
+    let toCheck = [pattern]
+    if (files.length) {
+      toCheck = files
+    }
+
+    await runBin('eslint', ['--fix', ...toCheck])
+    await runBin('prettier', ['--write', ...toCheck])
   })
 
 program

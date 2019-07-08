@@ -1,8 +1,7 @@
 const config = {
   hooks: {
-    'pre-commit': 'dev-core run lint-staged',
-    'commit-msg': 'dev-core run commitlint -- -E HUSKY_GIT_PARAMS',
-    'pre-push': 'yarn build && yarn test',
+    'pre-commit': 'fusee run lint-staged',
+    'commit-msg': 'fusee run commitlint -- -E HUSKY_GIT_PARAMS',
   },
 }
 

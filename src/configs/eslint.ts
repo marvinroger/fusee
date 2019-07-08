@@ -4,7 +4,7 @@ const config = {
 
   extends: [
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
+    'prettier',
     'prettier/@typescript-eslint',
   ],
 
