@@ -7,12 +7,10 @@ const defaultParams: LintStagedParams = {
 }
 
 const makeConfig = (params: LintStagedParams) => ({
-  linters: {
-    '*.{ts,tsx,js,jsx}': [
-      `fusee lint${params.monorepo ? ' --monorepo' : ''}`,
-      'git add',
-    ],
-  },
+  '*.{ts,tsx,js,jsx}': [
+    `fusee lint${params.monorepo ? ' --monorepo' : ''}`,
+    'git add',
+  ],
 })
 
 /**
