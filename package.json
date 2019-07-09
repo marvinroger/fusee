@@ -1,6 +1,6 @@
 {
   "name": "@marvinroger/fusee",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "This module provides tooling to lint, format, test and write JS modules.",
   "homepage": "https://github.com/marvinroger/fusee",
   "bugs": "https://github.com/marvinroger/fusee/issues",
