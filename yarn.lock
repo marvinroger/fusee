@@ -432,9 +432,9 @@
     rimraf "^2.5.2"
 
 "@marvinroger/fusee@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@marvinroger/fusee/-/fusee-3.0.1.tgz#dd97be433cb1e386584a7b869287f42600359e7e"
-  integrity sha512-7V9WPMAz0Dph6CGVbpjt/IE0br7HkwiGyOgBIQkLvCnQ/KxbmLr4UY8x/zwHDgMC6HdrBvrzdt6uL4l03sS/Bw==
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@marvinroger/fusee/-/fusee-3.0.2.tgz#4d9595d7a798f83f56b0e4cc56ee5305e402f47e"
+  integrity sha512-bDfc5e22IamgLF6pJn++JlwzS0COkK+DSjAsAztPiP4OLlqKwjReeTLht1UWKIl80vkm/s9SDZDOFokmD60EYw==
   dependencies:
     "@commitlint/cli" "^8.0.0"
     "@commitlint/config-conventional" "^8.0.0"
@@ -443,6 +443,7 @@
     cz-conventional-changelog "^2.1.0"
     eslint "^6.0.1"
     jest "^24.8.0"
+    jest-config "^24.8.0"
     lint-staged "^9.1.0"
     mrm "^1.2.1"
     mrm-core "^3.3.0"
