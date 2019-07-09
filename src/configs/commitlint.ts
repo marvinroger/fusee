@@ -1,10 +1,16 @@
+import { FuseeParams } from '../fusee'
+
 const config = {
   extends: ['@commitlint/config-conventional'],
 }
 
-/**
- * Get the commitlint configuration object
- */
-export function getCommitlintConfig(): typeof config {
-  return config
+export function buildGetCommitlintConfig(_fuseeParams: FuseeParams) {
+  /**
+   * Get the commitlint configuration object
+   */
+  function get(): typeof config {
+    return config
+  }
+
+  return get
 }

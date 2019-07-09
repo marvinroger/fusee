@@ -1,3 +1,5 @@
+import { FuseeParams } from '../fusee'
+
 const config = {
   hooks: {
     'pre-commit': 'fusee run lint-staged',
@@ -5,9 +7,13 @@ const config = {
   },
 }
 
-/**
- * Get the Husky configuration object
- */
-export function getHuskyConfig(): typeof config {
-  return config
+export function buildGetHuskyConfig(_fuseeParams: FuseeParams) {
+  /**
+   * Get the Husky configuration object
+   */
+  function getHuskyConfig(): typeof config {
+    return config
+  }
+
+  return getHuskyConfig
 }

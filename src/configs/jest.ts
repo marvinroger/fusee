@@ -1,4 +1,5 @@
 import { defaults } from 'jest-config'
+import { FuseeParams } from '../fusee'
 
 const BUILT_PACKAGE_DIR = '/pkg/'
 
@@ -15,9 +16,13 @@ const config = {
   ],
 }
 
-/**
- * Get the Jest configuration object
- */
-export function getJestConfig(): typeof config {
-  return config
+export function buildGetJestConfig(_fuseeParams: FuseeParams) {
+  /**
+   * Get the Jest configuration object
+   */
+  function get(): typeof config {
+    return config
+  }
+
+  return get
 }

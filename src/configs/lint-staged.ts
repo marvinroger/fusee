@@ -1,21 +1,19 @@
-interface LintStagedParams {
-  monorepo?: boolean
-}
+import { FuseeParams } from '../fusee'
 
-const defaultParams: LintStagedParams = {
-  monorepo: false,
-}
-
-const makeConfig = (params: LintStagedParams) => ({
+const makeConfig = (fuseeParams: FuseeParams) => ({
   '*.{ts,tsx,js,jsx}': [
-    `fusee lint${params.monorepo ? ' --monorepo' : ''}`,
+    `fusee lint${fuseeParams.monorepo ? ' --monorepo' : ''}`,
     'git add',
   ],
 })
 
-/**
- * Get the lint-staged configuration object
- */
-export function getLintStagedConfig(params: LintStagedParams = defaultParams) {
-  return makeConfig(params)
+export function buildGetLintStagedConfig(fuseeParams: FuseeParams) {
+  /**
+   * Get the lint-staged configuration object
+   */
+  function get() {
+    return makeConfig(fuseeParams)
+  }
+
+  return get
 }

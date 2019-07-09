@@ -1,1 +1,1 @@
-module.exports = require('@marvinroger/fusee').getJestConfig()
+module.exports = require('./fusee').getJestConfig()

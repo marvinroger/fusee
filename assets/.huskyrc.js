@@ -1,1 +1,1 @@
-module.exports = require("@marvinroger/fusee").getHuskyConfig();
+module.exports = require('./fusee').getHuskyConfig()

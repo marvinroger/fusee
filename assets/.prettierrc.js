@@ -1,1 +1,1 @@
-module.exports = require("@marvinroger/fusee").getPrettierConfig();
+module.exports = require('./fusee').getPrettierConfig()
