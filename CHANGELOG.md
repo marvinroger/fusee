@@ -44,8 +44,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 
 
-<a name="1.11.0"></a>
-# [1.11.0](https://github.com/marvinroger/js-dev-core/compare/v1.9.3...v1.11.0) (2019-06-06)
+## [1.11.0](https://github.com/marvinroger/js-dev-core/compare/v1.9.3...v1.11.0) (2019-06-06)
 
 
 ### Bug Fixes
@@ -59,8 +58,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 
 
-<a name="1.10.0"></a>
-# [1.10.0](https://github.com/marvinroger/js-dev-core/compare/v1.9.3...v1.10.0) (2019-06-06)
+## [1.10.0](https://github.com/marvinroger/js-dev-core/compare/v1.9.3...v1.10.0) (2019-06-06)
 
 
 ### Features
@@ -69,7 +67,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 
 
-## [1.9.3](https://github.com/marvinroger/js-dev-core/compare/v1.9.2...v1.9.3) (2019-04-24)
+### [1.9.3](https://github.com/marvinroger/js-dev-core/compare/v1.9.2...v1.9.3) (2019-04-24)
 
 
 ### Bug Fixes
@@ -78,7 +76,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 
 
-## [1.9.2](https://github.com/marvinroger/js-dev-core/compare/v1.9.1...v1.9.2) (2019-04-12)
+### [1.9.2](https://github.com/marvinroger/js-dev-core/compare/v1.9.1...v1.9.2) (2019-04-12)
 
 
 ### Bug Fixes
@@ -87,7 +85,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 
 
-## [1.9.1](https://github.com/marvinroger/js-dev-core/compare/v1.9.0...v1.9.1) (2019-04-12)
+### [1.9.1](https://github.com/marvinroger/js-dev-core/compare/v1.9.0...v1.9.1) (2019-04-12)
 
 
 ### Bug Fixes
@@ -96,7 +94,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 
 
-# [1.9.0](https://github.com/marvinroger/js-dev-core/compare/v1.8.3...v1.9.0) (2019-04-12)
+## [1.9.0](https://github.com/marvinroger/js-dev-core/compare/v1.8.3...v1.9.0) (2019-04-12)
 
 
 ### Features
