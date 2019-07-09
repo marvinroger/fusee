@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/marvinroger/fusee/compare/v2.2.1...v3.0.0) (2019-07-09)
+
+
+### Bug Fixes
+
+* bin could not be run when `bin` as string ([9370251](https://github.com/marvinroger/fusee/commit/9370251))
+
+
+### Features
+
+* add global settings and enhance ESLint rules ([e5462ec](https://github.com/marvinroger/fusee/commit/e5462ec))
+
+
+### BREAKING CHANGES
+
+* the way of accessing configuration changes
+
+
+
 ### [2.2.1](https://github.com/marvinroger/fusee/compare/v2.2.0...v2.2.1) (2019-07-09)
 
 
