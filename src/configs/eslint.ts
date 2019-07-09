@@ -7,7 +7,7 @@ enum Level {
 }
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-interface ESLintConfig {
+export interface ESLintConfig {
   parser: string
   plugins: string[]
   extends: string[]
