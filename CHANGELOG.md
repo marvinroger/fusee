@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.1](https://github.com/marvinroger/fusee/compare/v2.2.0...v2.2.1) (2019-07-09)
+
+
+### Bug Fixes
+
+* **prettier:** ignore CHANGELOG.md ([fb7a2de](https://github.com/marvinroger/fusee/commit/fb7a2de))
+
+
+
 ## [2.2.0](https://github.com/marvinroger/fusee/compare/v2.1.0...v2.2.0) (2019-07-09)
 
 
