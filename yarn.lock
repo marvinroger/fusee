@@ -425,9 +425,9 @@
     rimraf "^2.5.2"
 
 "@marvinroger/fusee@^2.0.0":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@marvinroger/fusee/-/fusee-2.0.1.tgz#1402fdb53db9637a17d54ec1fac29256a44cc6c1"
-  integrity sha512-LErURGEOXvzV9ADF1F9lcuEpajEphDiqynBLCYINLzgk3n3cD91T+cgTWC6joqGfkuOHeW2Djoak/m9pAqPIbg==
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@marvinroger/fusee/-/fusee-2.2.1.tgz#0bfe3b56b3dbf199f0cdf599f0a135df289422d3"
+  integrity sha512-FX/XsUBk6Ta2qPeHhg2q4zo91YirG9ocNChxbzfg+HgV1BO1vJoxVI4ArRFmo4GwZKelDRwH/tLGZG4yJM/2uA==
   dependencies:
     "@commitlint/cli" "^8.0.0"
     "@commitlint/config-conventional" "^8.0.0"
@@ -6328,9 +6328,9 @@ typescript@3.2.x:
   integrity sha512-0RNDbSdEokBeEAkgNbxJ+BLwSManFy9TeXz8uW+48j/xhEXv1ePME60olyzw2XzUqUBNAYFeJadIqAgNqIACwg==
 
 typescript@^3.4.4:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.5.2.tgz#a09e1dc69bc9551cadf17dba10ee42cf55e5d56c"
-  integrity sha512-7KxJovlYhTX5RaRbUdkAXN1KUZ8PwWlTzQdHV6xNqvuFOs7+WBo10TQUqT19Q/Jz2hk5v9TQDIhyLhhJY4p5AA==
+  version "3.5.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.5.3.tgz#c830f657f93f1ea846819e929092f5fe5983e977"
+  integrity sha512-ACzBtm/PhXBDId6a6sDJfroT2pOWt/oOnk4/dElG5G33ZL776N3Y6/6bKZJBFpd+b05F3Ct9qDjMeJmRWtE2/g==
 
 uglify-js@^3.1.4:
   version "3.6.0"
