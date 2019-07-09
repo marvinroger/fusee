@@ -1,1 +1,1 @@
-module.exports = require('@marvinroger/fusee').getEslintConfig()
+module.exports = require('./fusee').getEslintConfig()

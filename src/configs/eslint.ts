@@ -28,7 +28,7 @@ const makeConfig = ({ react }: FuseeParams) => {
       'prettier',
       'prettier/@typescript-eslint',
       'plugin:promise/recommended',
-      'plugin:node/recommended',
+      'plugin:node/recommended-module',
       'plugin:jest/recommended',
       'plugin:eslint-comments/recommended',
     ],
@@ -41,6 +41,9 @@ const makeConfig = ({ react }: FuseeParams) => {
         { argsIgnorePattern: '^_' },
       ],
       'eslint-comments/no-unused-disable': Level.Error,
+      'node/no-unsupported-features/es-syntax': Level.Off,
+      'node/no-missing-import': Level.Off,
+      'node/shebang': Level.Off,
     },
 
     settings: {},

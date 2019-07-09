@@ -431,10 +431,10 @@
     mkdirp "^0.5.1"
     rimraf "^2.5.2"
 
-"@marvinroger/fusee@^2.0.0":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@marvinroger/fusee/-/fusee-2.2.1.tgz#0bfe3b56b3dbf199f0cdf599f0a135df289422d3"
-  integrity sha512-FX/XsUBk6Ta2qPeHhg2q4zo91YirG9ocNChxbzfg+HgV1BO1vJoxVI4ArRFmo4GwZKelDRwH/tLGZG4yJM/2uA==
+"@marvinroger/fusee@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@marvinroger/fusee/-/fusee-3.0.1.tgz#dd97be433cb1e386584a7b869287f42600359e7e"
+  integrity sha512-7V9WPMAz0Dph6CGVbpjt/IE0br7HkwiGyOgBIQkLvCnQ/KxbmLr4UY8x/zwHDgMC6HdrBvrzdt6uL4l03sS/Bw==
   dependencies:
     "@commitlint/cli" "^8.0.0"
     "@commitlint/config-conventional" "^8.0.0"

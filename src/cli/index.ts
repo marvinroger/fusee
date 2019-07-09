@@ -38,6 +38,7 @@ program
   .action(async (cmd: string, args: string[]) => {
     if (!SUPPORTED_COMMANDS.includes(cmd)) {
       die(`${cmd} is not supported`)
+      return
     }
 
     await runBin(cmd, args)
@@ -93,7 +94,7 @@ program.on('command:*', () => {
     program.args.join(' ')
   )
 
-  process.exit(1)
+  process.exitCode = 1
 })
 
 program.parse(process.argv)

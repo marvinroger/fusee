@@ -1,1 +1,1 @@
-module.exports = require('@marvinroger/fusee').getLintStagedConfig()
+module.exports = require('./fusee').getLintStagedConfig()

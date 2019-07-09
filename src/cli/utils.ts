@@ -6,13 +6,12 @@ const isWin = process.platform === 'win32'
 
 export function die(msg: string): void {
   console.error(msg)
-  process.exit(1)
+  process.exitCode = 1
 }
 
 export async function runBin(
   command: string,
-  args: string[] = [],
-  failIfFail: boolean = true
+  args: string[] = []
 ): Promise<number> {
   return new Promise((resolve, reject) => {
     const packageName = binMapping[command]
@@ -54,10 +53,11 @@ export async function runBin(
     })
 
     commandProcess.on('close', code => {
-      if (failIfFail) {
-        process.exit(code)
-      } else {
+      if (code === 0) {
         resolve(code)
+      } else {
+        process.exitCode = code
+        reject(new Error('The command failed'))
       }
     })
   })
