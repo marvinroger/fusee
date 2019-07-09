@@ -1,11 +1,11 @@
 <h1 align=center style="max-width: 100%;">
-  <img width="128" height="128" alt="Fusee Logo" src="./fusee.svg" style="max-width: 100%;"><br/>
+  <img width="128" height="128" alt="Fusee Logo" src="https://cdn.jsdelivr.net/gh/marvinroger/fusee@7b1db98006b3acae1da93087c76b31d536df8763/fusee.svg" style="max-width: 100%;"><br/>
   <a href="https://github.com/marvinroger/fusee">@marvinroger/fusee</a>
 </h1>
 
 <p align=center style="line-height: 2;">
   <a href="https://www.npmjs.com/package/@marvinroger/fusee" target="_blank"><img src="https://img.shields.io/npm/v/@marvinroger/fusee.svg?style=flat-square&color=007acc&label=version&logo=NPM" alt="version" /></a>
-  <img src="https://img.shields.io/static/v1.svg?label=&message=TypeScript&color=294E80&style=flat-square&logo=typescript">
+  <a href="https://www.typescriptlang.org" target="_blank"><img src="https://img.shields.io/static/v1.svg?label=&message=TypeScript&color=294E80&style=flat-square&logo=typescript"></a>
 </p>
 
 <p align=center>
@@ -46,8 +46,8 @@ This runs `eslint --fix` and `prettier --write` on:
 - `packages/**/src/**/*.ts` if `--monorepo` is given
 - Only given files if a list of files is supplied
 
-The ESLint config can be found at ⚙[src/configs/eslint.ts](src/configs/eslint.ts), and
-the Prettier config at ⚙[src/configs/prettier.ts](src/configs/prettier.ts).
+The ESLint config can be found at ⚙ [src/configs/eslint.ts](src/configs/eslint.ts), and
+the Prettier config at ⚙ [src/configs/prettier.ts](src/configs/prettier.ts).
 
 ---
 
@@ -59,7 +59,7 @@ Test the code with Jest.
 This runs jest `--passWithNoTests` with the default Jest config, with TS supported and with
 the `/pkg/` path excluded.
 
-The Jest config can be found at ⚙[src/configs/jest.ts](src/configs/jest.ts).
+The Jest config can be found at ⚙ [src/configs/jest.ts](src/configs/jest.ts).
 
 ---
 
@@ -89,10 +89,10 @@ Bump `package.json` according to the commits, update `CHANGELOG.md` and tag a ne
 
 ## Installed Git hooks
 
-The Husky config can be found at ⚙[src/configs/husky.ts](src/configs/husky.ts).
+The Husky config can be found at ⚙ [src/configs/husky.ts](src/configs/husky.ts).
 The following hooks are set:
 
-- `pre-commit`: This runs `lint-staged` with the config at ⚙[src/configs/lint-staged.ts](src/configs/lint-staged.ts). Whenever a file matches the `*.{ts,tsx,js,jsx}` pattern, the `lint` script will be ran on these files, fixing what's fixable. If the lint is unsuccessful and it cannot be auto-fixed, the commit will be aborted.
+- `pre-commit`: This runs `lint-staged` with the config at ⚙ [src/configs/lint-staged.ts](src/configs/lint-staged.ts). Whenever a file matches the `*.{ts,tsx,js,jsx}` pattern, the `lint` script will be ran on these files, fixing what's fixable. If the lint is unsuccessful and it cannot be auto-fixed, the commit will be aborted.
 
 - `commit-msg`: This runs `commitlint`, checking the message against the [Conventional Commits](https://www.conventionalcommits.org) format. If it fails, the commit is aborted.
 
