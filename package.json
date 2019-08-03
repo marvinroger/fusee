@@ -78,6 +78,7 @@
   },
   "files": [
     "assets/",
+    "patches/",
     "dist/",
     "tsconfig.json"
   ]
