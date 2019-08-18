@@ -1,10 +1,7 @@
 import { FuseeParams } from '../fusee'
 
 const makeConfig = (fuseeParams: FuseeParams) => ({
-  '*.{ts,tsx,js,jsx}': [
-    `fusee lint${fuseeParams.monorepo ? ' --monorepo' : ''}`,
-    'git add',
-  ],
+  '*.{ts,tsx,js,jsx}': [`fusee lint`, 'git add'],
 })
 
 export function buildGetLintStagedConfig(fuseeParams: FuseeParams) {
