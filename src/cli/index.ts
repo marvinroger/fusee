@@ -2,7 +2,6 @@
 
 import * as program from 'commander'
 import * as path from 'path'
-// @ts-ignore
 import * as pkg from '../../package.json'
 import { die, runBin } from './utils'
 

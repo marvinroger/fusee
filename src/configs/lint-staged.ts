@@ -1,6 +1,6 @@
 import { FuseeParams } from '../fusee'
 
-const makeConfig = (fuseeParams: FuseeParams) => ({
+const makeConfig = (_fuseeParams: FuseeParams) => ({
   '*.{ts,tsx,js,jsx}': [`fusee lint`, 'git add'],
 })
 

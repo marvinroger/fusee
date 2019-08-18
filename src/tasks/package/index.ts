@@ -1,5 +1,4 @@
 import { install, packageJson } from 'mrm-core'
-// @ts-ignore
 import * as pkg from '../../../package.json'
 
 function task(): void {
