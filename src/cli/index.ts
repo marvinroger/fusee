@@ -2,8 +2,10 @@
 
 import * as program from 'commander'
 import * as path from 'path'
-import * as pkg from '../../package.json'
 import { die, runBin } from './utils'
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const pkg = require('../../package')
 
 const SUPPORTED_COMMANDS = [
   'eslint',

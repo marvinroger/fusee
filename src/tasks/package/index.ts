@@ -1,5 +1,7 @@
 import { install, packageJson } from 'mrm-core'
-import * as pkg from '../../../package.json'
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const pkg = require('../../package')
 
 function task(): void {
   packageJson()
