@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.3.0](https://github.com/marvinroger/fusee/compare/v3.2.2...v3.3.0) (2019-08-28)
+
+
+### Features
+
+* read CLI params (like monorepo) directly from the fusee.js file ([e1c1228](https://github.com/marvinroger/fusee/commit/e1c1228))
+
 ### [3.2.2](https://github.com/marvinroger/fusee/compare/v3.2.1...v3.2.2) (2019-08-18)
 
 
