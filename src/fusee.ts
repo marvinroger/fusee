@@ -19,6 +19,7 @@ export function buildFusee(params: FuseeParams) {
   const hydratedParams = { monorepo, react }
 
   return {
+    _params: hydratedParams,
     getCommitlintConfig: buildGetCommitlintConfig(hydratedParams),
     getEslintConfig: buildGetEslintConfig(hydratedParams),
     getHuskyConfig: buildGetHuskyConfig(hydratedParams),

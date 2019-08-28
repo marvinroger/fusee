@@ -1,11 +1,16 @@
 #!/usr/bin/env node
 
-import * as program from 'commander'
+import program from 'commander'
+import findRoot from 'find-root'
+import findYarnWorkspaceRoot from 'find-yarn-workspace-root'
 import * as path from 'path'
+import { buildFusee } from '../index'
 import { die, runBin } from './utils'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const pkg = require('../../package')
+
+const FUSEE_FILE_NAME = 'fusee.js'
 
 const SUPPORTED_COMMANDS = [
   'eslint',
@@ -23,6 +28,38 @@ const SRC_GLOB = 'src/**/*.ts'
 const SRC_GLOB_MONOREPO = 'packages/**/src/**/*.ts'
 
 const TASKS_DIR = path.resolve(__dirname, '../tasks')
+
+const CURRENT_PATH = process.cwd()
+const getPackageRoot = (): string => {
+  try {
+    return findRoot(CURRENT_PATH)
+  } catch (_err) {
+    die(
+      'Not in the context of a Node.js project (no package.json found in parents)'
+    )
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return {} as any
+  }
+}
+const PACKAGE_ROOT = getPackageRoot()
+
+const WORKSPACE_ROOT = findYarnWorkspaceRoot(PACKAGE_ROOT)
+
+const IS_MONOREPO = WORKSPACE_ROOT !== null
+const ROOT = IS_MONOREPO ? (WORKSPACE_ROOT as string) : PACKAGE_ROOT
+
+const FUSEE_PATH = path.join(ROOT, FUSEE_FILE_NAME)
+
+const getFusee = (): ReturnType<typeof buildFusee> => {
+  try {
+    return require(FUSEE_PATH)
+  } catch (_err) {
+    die('Cannot find fusee.js in root')
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return {} as any
+  }
+}
+const FUSEE = getFusee()
 
 program.version(pkg.version)
 
@@ -47,17 +84,21 @@ program
 
 program
   .command('lint [files...]')
-  .option('--monorepo', 'Lint on a monorepo (packages/**)')
   .description('lint and try to fix the code')
-  .action(async (files: string[], cmd: { monorepo?: boolean }) => {
-    const pattern = cmd.monorepo ? SRC_GLOB_MONOREPO : SRC_GLOB
+  .action(async (files: string[]) => {
+    const pattern = FUSEE._params.monorepo ? SRC_GLOB_MONOREPO : SRC_GLOB
 
-    let toCheck = [pattern]
+    let toCheck = [path.join(ROOT, pattern)]
     if (files.length) {
       toCheck = files
     }
 
-    await runBin('eslint', ['--fix', ...toCheck])
+    await runBin('eslint', [
+      '--ignore-path',
+      path.join(ROOT, '.gitignore'),
+      '--fix',
+      ...toCheck,
+    ])
     await runBin('prettier', ['--write', ...toCheck])
   })
 
@@ -84,18 +125,17 @@ program
       '--theme',
       'minimal',
       '--out',
-      'docs/',
-      'src/',
+      path.join(PACKAGE_ROOT, 'docs/'),
+      path.join(PACKAGE_ROOT, 'src/'),
     ])
   })
 
 program.on('command:*', () => {
-  console.error(
-    'Invalid command: %s\nSee --help for a list of available commands.',
-    program.args.join(' ')
+  die(
+    `Invalid command: ${program.args.join(
+      ' '
+    )}\nSee --help for a list of available commands.`
   )
-
-  process.exitCode = 1
 })
 
 program.parse(process.argv)

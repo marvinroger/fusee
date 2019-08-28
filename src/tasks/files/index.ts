@@ -12,7 +12,7 @@ const FILES = [
   '.prettierignore',
   '.prettierrc.js',
   'jest.config.js',
-  'lint-staged.config.js',
+  '.lintstagedrc.js',
   'tsconfig.json',
 ]
 

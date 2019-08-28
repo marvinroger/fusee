@@ -5,8 +5,8 @@ import { binMapping } from './bin-mapping'
 const isWin = process.platform === 'win32'
 
 export function die(msg: string): void {
-  console.error(msg)
   process.exitCode = 1
+  throw new Error(msg)
 }
 
 export async function runBin(
