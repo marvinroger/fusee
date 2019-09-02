@@ -36,15 +36,15 @@ This will install the stack, and add the correct scripts inside the `package.jso
 ## Installed scripts
 
 ```bash
-yarn lint --monorepo [files...]
+yarn lint [files...]
 ```
 
 Lint the code with ESlint and Prettier, trying to fix what's fixable.
 This runs `eslint --fix` and `prettier --write` on:
 
 - `src/**/*.ts` if not a monorepo
-- `packages/**/src/**/*.ts` if `--monorepo` is given
-- Only given files if a list of files is supplied
+- `packages/**/src/**/*.ts` if monorepo
+- Only given files if a list of files is supplied (this is how lint-staged is setup)
 
 The ESLint config can be found at ⚙ [src/configs/eslint.ts](src/configs/eslint.ts), and
 the Prettier config at ⚙ [src/configs/prettier.ts](src/configs/prettier.ts).
@@ -96,5 +96,5 @@ The following hooks are set:
 
 - `commit-msg`: This runs `commitlint`, checking the message against the [Conventional Commits](https://www.conventionalcommits.org) format. If it fails, the commit is aborted.
 
-There is `pre-push` hook, as it might take too long to build or test the project.
+There is no `pre-push` hook, as it might take too long to build or test the project.
 These checks should be done on the CI.
