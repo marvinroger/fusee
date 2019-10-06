@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.3.1](https://github.com/marvinroger/fusee/compare/v3.3.0...v3.3.1) (2019-10-06)
+
+
+### Bug Fixes
+
+* **eslint:** add more reliable patch ([f4bd223](https://github.com/marvinroger/fusee/commit/f4bd223))
+
 ## [3.3.0](https://github.com/marvinroger/fusee/compare/v3.2.2...v3.3.0) (2019-08-28)
 
 
