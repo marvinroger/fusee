@@ -5,7 +5,7 @@ import findRoot from 'find-root'
 import findYarnWorkspaceRoot from 'find-yarn-workspace-root'
 import * as path from 'path'
 import { buildFusee } from '../index'
-import { die, runBin } from './utils'
+import { die, runLocalBin } from './utils'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const pkg = require('../../package')
@@ -68,7 +68,7 @@ program
   .command('init')
   .description('initialize a project')
   .action(async () => {
-    await runBin('mrm', ['package', 'files', '--dir', TASKS_DIR])
+    await runLocalBin('mrm', ['package', 'files', '--dir', TASKS_DIR])
   })
 
 program
@@ -80,7 +80,7 @@ program
       return
     }
 
-    await runBin(cmd, args)
+    await runLocalBin(cmd, args)
   })
 
 program
@@ -94,27 +94,27 @@ program
       toCheck = files
     }
 
-    await runBin('eslint', [
+    await runLocalBin('eslint', [
       '--ignore-path',
       path.join(ROOT, '.gitignore'),
       '--fix',
       ...toCheck,
     ])
-    await runBin('prettier', ['--write', ...toCheck])
+    await runLocalBin('prettier', ['--write', ...toCheck])
   })
 
 program
   .command('test')
   .description('run the tests')
   .action(async () => {
-    await runBin('jest', ['--passWithNoTests'])
+    await runLocalBin('jest', ['--passWithNoTests'])
   })
 
 program
   .command('generate-docs')
   .description('generate the docs')
   .action(async () => {
-    await runBin('typedoc', [
+    await runLocalBin('typedoc', [
       '--target',
       'ES6',
       '--mode',
