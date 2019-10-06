@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.3.2](https://github.com/marvinroger/fusee/compare/v3.3.1...v3.3.2) (2019-10-06)
+
+
+### Bug Fixes
+
+* more reliable command spawning ([dd2479f](https://github.com/marvinroger/fusee/commit/dd2479f))
+
 ### [3.3.1](https://github.com/marvinroger/fusee/compare/v3.3.0...v3.3.1) (2019-10-06)
 
 
