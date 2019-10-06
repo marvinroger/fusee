@@ -24,8 +24,9 @@ const SUPPORTED_COMMANDS = [
   'standard-version',
 ]
 
-const SRC_GLOB = 'src/**/*.ts'
-const SRC_GLOB_MONOREPO = 'packages/**/src/**/*.ts'
+export const LINT_GLOB = '*.{ts,tsx,js,jsx}'
+const SRC_GLOB = `src/**/${LINT_GLOB}`
+const SRC_GLOB_MONOREPO = `packages/**/src/**/${LINT_GLOB}`
 
 const TASKS_DIR = path.resolve(__dirname, '../tasks')
 

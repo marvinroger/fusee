@@ -1,3 +1,4 @@
+/* eslint-env node */
 // This is a workaround for https://github.com/eslint/eslint/issues/3458
 //
 // To correct how ESLint searches for plugin packages, add this line to the top of your project's .eslintrc.js file:

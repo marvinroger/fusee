@@ -1,7 +1,8 @@
+import { LINT_GLOB } from '../cli/index'
 import { FuseeParams } from '../fusee'
 
 const makeConfig = (_fuseeParams: FuseeParams) => ({
-  '*.{ts,tsx,js,jsx}': [`fusee lint`, 'git add'],
+  [LINT_GLOB]: [`fusee lint`, 'git add'],
 })
 
 export function buildGetLintStagedConfig(fuseeParams: FuseeParams) {
