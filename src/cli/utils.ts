@@ -13,6 +13,5 @@ export async function runLocalBin(
     preferLocal: true,
     localDir: __dirname,
     stdio: 'inherit',
-    stderr: 'inherit',
   })
 }
