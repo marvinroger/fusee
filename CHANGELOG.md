@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.3.5](https://github.com/marvinroger/fusee/compare/v3.3.4...v3.3.5) (2019-10-11)
+
+
+### Bug Fixes
+
+* CLI was called when building the fusee ([b5c7136](https://github.com/marvinroger/fusee/commit/b5c7136))
+
 ### [3.3.4](https://github.com/marvinroger/fusee/compare/v3.3.3...v3.3.4) (2019-10-11)
 
 
