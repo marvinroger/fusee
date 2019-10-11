@@ -1,4 +1,4 @@
-import { LINT_GLOB } from '../cli/index'
+import { LINT_GLOB } from '../constants'
 import { FuseeParams } from '../fusee'
 
 const makeConfig = (_fuseeParams: FuseeParams) => ({

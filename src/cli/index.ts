@@ -4,6 +4,7 @@ import program from 'commander'
 import findRoot from 'find-root'
 import findYarnWorkspaceRoot from 'find-yarn-workspace-root'
 import * as path from 'path'
+import { SRC_GLOB, SRC_GLOB_MONOREPO } from '../constants'
 import { buildFusee } from '../index'
 import { die, runLocalBin } from './utils'
 
@@ -23,10 +24,6 @@ const SUPPORTED_COMMANDS = [
   'lint-staged',
   'standard-version',
 ]
-
-export const LINT_GLOB = '*.{ts,tsx,js,jsx}'
-const SRC_GLOB = `src/**/${LINT_GLOB}`
-const SRC_GLOB_MONOREPO = `packages/**/src/**/${LINT_GLOB}`
 
 const TASKS_DIR = path.resolve(__dirname, '../tasks')
 
