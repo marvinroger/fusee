@@ -32,7 +32,6 @@ const makeConfig = ({ react }: FuseeParams) => {
       'plugin:promise/recommended',
       'plugin:node/recommended-module',
       'plugin:jest/recommended',
-      'plugin:eslint-comments/recommended',
     ],
 
     rules: {
