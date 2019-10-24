@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.3.7](https://github.com/marvinroger/fusee/compare/v3.3.6...v3.3.7) (2019-10-24)
+
+
+### Bug Fixes
+
+* **eslint:** remove orphan comment rule ([0483582](https://github.com/marvinroger/fusee/commit/0483582))
+
 ### [3.3.6](https://github.com/marvinroger/fusee/compare/v3.3.5...v3.3.6) (2019-10-24)
 
 ### [3.3.5](https://github.com/marvinroger/fusee/compare/v3.3.4...v3.3.5) (2019-10-11)
