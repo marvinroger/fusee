@@ -41,7 +41,6 @@ const makeConfig = ({ react }: FuseeParams) => {
         Level.Warn,
         { argsIgnorePattern: '^_' },
       ],
-      'eslint-comments/no-unused-disable': Level.Error,
       'node/no-unsupported-features/es-syntax': Level.Off,
       'node/no-missing-import': Level.Off,
       'node/shebang': Level.Off,
@@ -56,6 +55,7 @@ const makeConfig = ({ react }: FuseeParams) => {
     config.settings.react = {
       version: 'detect',
     }
+    config.rules['react/prop-types'] = Level.Off
 
     // React hooks
     config.plugins.push('react-hooks')
