@@ -5,11 +5,8 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "outDir": "./dist/",
-    "baseUrl": ".",
-    "paths": {
-      "*": ["types-local/*"]
-    }
+    "baseUrl": "."
   },
-  "include": ["./src/index.ts", "./src/cli/index.ts", "./src/tasks/**/*.ts"],
+  "include": ["./src"],
   "exclude": ["node_modules", "**/__tests__/*"]
 }
