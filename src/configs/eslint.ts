@@ -69,12 +69,12 @@ const makeConfig = ({ react }: FuseeParams) => {
   return config
 }
 
-export function buildGetEslintConfig(fuseeParams: FuseeParams) {
+export function buildEslint(fuseeParams: FuseeParams) {
   /**
    * Get the ESLint configuration object
    */
-  function get() {
-    return makeConfig(fuseeParams)
+  function get(merge?: any) {
+    return { ...makeConfig(fuseeParams), ...merge }
   }
 
   return get

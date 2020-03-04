@@ -16,12 +16,12 @@ const config = {
   ],
 }
 
-export function buildGetJestConfig(_fuseeParams: FuseeParams) {
+export function buildJest(_fuseeParams: FuseeParams) {
   /**
    * Get the Jest configuration object
    */
-  function get(): typeof config {
-    return config
+  function get(merge?: any): typeof config {
+    return { ...config, ...merge }
   }
 
   return get

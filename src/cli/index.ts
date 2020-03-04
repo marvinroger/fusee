@@ -1,12 +1,10 @@
 #!/usr/bin/env node
 
 import program from 'commander'
-import findRoot from 'find-root'
-import findYarnWorkspaceRoot from 'find-yarn-workspace-root'
 import * as path from 'path'
 import { SRC_GLOB, SRC_GLOB_MONOREPO } from '../constants'
 import { buildFusee } from '../index'
-import { die, runLocalBin } from './utils'
+import { getPackageInformation, runLocalBin } from './utils'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const pkg = require('../../package')
@@ -22,39 +20,18 @@ const SUPPORTED_COMMANDS = [
   'git-cz',
   'jest',
   'lint-staged',
-  'standard-version',
 ]
 
 const TASKS_DIR = path.resolve(__dirname, '../tasks')
 
-const CURRENT_PATH = process.cwd()
-const getPackageRoot = (): string => {
-  try {
-    return findRoot(CURRENT_PATH)
-  } catch (_err) {
-    die(
-      'Not in the context of a Node.js project (no package.json found in parents)'
-    )
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return {} as any
-  }
-}
-const PACKAGE_ROOT = getPackageRoot()
-
-const WORKSPACE_ROOT = findYarnWorkspaceRoot(PACKAGE_ROOT)
-
-const IS_MONOREPO = WORKSPACE_ROOT !== null
-const ROOT = IS_MONOREPO ? (WORKSPACE_ROOT as string) : PACKAGE_ROOT
-
-const FUSEE_PATH = path.join(ROOT, FUSEE_FILE_NAME)
+const packageInformation = getPackageInformation().$
+const fuseePath = path.join(packageInformation.root, FUSEE_FILE_NAME)
 
 const getFusee = (): ReturnType<typeof buildFusee> => {
   try {
-    return require(FUSEE_PATH)
+    return require(fuseePath)
   } catch (_err) {
-    die('Cannot find fusee.js in root')
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return {} as any
+    throw new Error('Cannot find fusee.js in root')
   }
 }
 const FUSEE = getFusee()
@@ -73,8 +50,7 @@ program
   .description('run the given cmd')
   .action(async (cmd: string, args: string[]) => {
     if (!SUPPORTED_COMMANDS.includes(cmd)) {
-      die(`${cmd} is not supported`)
-      return
+      throw new Error(`${cmd} is not supported`)
     }
 
     await runLocalBin(cmd, args)
@@ -86,14 +62,14 @@ program
   .action(async (files: string[]) => {
     const pattern = FUSEE._params.monorepo ? SRC_GLOB_MONOREPO : SRC_GLOB
 
-    let toCheck = [path.join(ROOT, pattern)]
+    let toCheck = [path.join(packageInformation.root, pattern)]
     if (files.length) {
       toCheck = files
     }
 
     await runLocalBin('eslint', [
       '--ignore-path',
-      path.join(ROOT, '.gitignore'),
+      path.join(packageInformation.root, '.gitignore'),
       '--fix',
       ...toCheck,
     ])
@@ -103,6 +79,20 @@ program
 program
   .command('test')
   .description('run the tests')
+  .action(async () => {
+    await runLocalBin('jest', ['--passWithNoTests'])
+  })
+
+program
+  .command('commit')
+  .description('commit interactively')
+  .action(async () => {
+    await runLocalBin('git-cz')
+  })
+
+program
+  .command('release')
+  .description('release the package')
   .action(async () => {
     await runLocalBin('jest', ['--passWithNoTests'])
   })
@@ -123,13 +113,13 @@ program
       '--theme',
       'minimal',
       '--out',
-      path.join(PACKAGE_ROOT, 'docs/'),
-      path.join(PACKAGE_ROOT, 'src/'),
+      path.join(packageInformation.root, 'docs/'),
+      path.join(packageInformation.root, 'src/'),
     ])
   })
 
 program.on('command:*', () => {
-  die(
+  throw new Error(
     `Invalid command: ${program.args.join(
       ' '
     )}\nSee --help for a list of available commands.`

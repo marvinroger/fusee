@@ -1,9 +1,12 @@
 {
+  "extends": "./tsconfig.base",
   "compilerOptions": {
     "target": "es2018",
-    "module": "esnext",
-    "strict": true,
-    "declaration": true,
-    "incremental": true
-  }
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "outDir": "./dist/",
+    "baseUrl": "."
+  },
+  "include": ["./src"],
+  "exclude": ["node_modules", "**/__tests__/*"]
 }

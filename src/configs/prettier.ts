@@ -6,12 +6,12 @@ const config = {
   semi: false,
 }
 
-export function buildGetPrettierConfig(_fuseeParams: FuseeParams) {
+export function buildPrettier(_fuseeParams: FuseeParams) {
   /**
    * Get the Prettier configuration object
    */
-  function get(): typeof config {
-    return config
+  function get(merge?: any): typeof config {
+    return { ...config, ...merge }
   }
 
   return get

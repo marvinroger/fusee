@@ -1,256 +1,224 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file.
 
-### [3.3.8](https://github.com/marvinroger/fusee/compare/v3.3.7...v3.3.8) (2020-03-04)
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-### [3.3.7](https://github.com/marvinroger/fusee/compare/v3.3.6...v3.3.7) (2019-10-24)
+## [Unreleased]
 
+### Added
 
-### Bug Fixes
+- `fusee commit`, an alias for `fusee run git-cz`
 
-* **eslint:** remove orphan comment rule ([0483582](https://github.com/marvinroger/fusee/commit/0483582))
+### Removed
 
-### [3.3.6](https://github.com/marvinroger/fusee/compare/v3.3.5...v3.3.6) (2019-10-24)
+- **BREAKING**: `standard-version` is not used anymore. `fusee run standard-version` must be replaced with `fusee release`
 
-### [3.3.5](https://github.com/marvinroger/fusee/compare/v3.3.4...v3.3.5) (2019-10-11)
+### Changed
 
+- **BREAKING**: a project `tsconfig.json` must now extend `@marvinroger/fusee/tsconfig.base` instead of `@marvinroger/fusee/tsconfig`
+- **BREAKING**: node support is limited to `>= 10.0.0`
+- **BREAKING**: ESLint patches (`require('@marvinroger/fusee/patches/eslint-deps')`) are removed. The required ESLint plugins must now be installed by your project. `fusee doctor` will report the missing dependencies
+- **BREAKING**: renamed the `get*Config` functions:
+  - `getCommitlintConfig()` to `commitlint()`
+  - `getEslintConfig()` to `eslint()`
+  - `getHuskyConfig()` to `husky()`
+  - `getJestConfig()` to `jest()`
+  - `getLintStagedConfig()` to `lintStaged()`
+  - `getPrettierConfig()` to `prettier()`
+- `husky` is not a peer dependency anymore
 
-### Bug Fixes
+## [3.3.8](https://github.com/marvinroger/fusee/compare/v3.3.7...v3.3.8) - 2020-03-04
 
-* CLI was called when building the fusee ([b5c7136](https://github.com/marvinroger/fusee/commit/b5c7136))
-
-### [3.3.4](https://github.com/marvinroger/fusee/compare/v3.3.3...v3.3.4) (2019-10-11)
-
-
-### Bug Fixes
-
-* use local bin instead of execa ([cfd7f74](https://github.com/marvinroger/fusee/commit/cfd7f74))
-
-### [3.3.3](https://github.com/marvinroger/fusee/compare/v3.3.2...v3.3.3) (2019-10-06)
-
-
-### Bug Fixes
-
-* fix command spawning ([6df3b0a](https://github.com/marvinroger/fusee/commit/6df3b0a))
-
-### [3.3.2](https://github.com/marvinroger/fusee/compare/v3.3.1...v3.3.2) (2019-10-06)
-
+## [3.3.7](https://github.com/marvinroger/fusee/compare/v3.3.6...v3.3.7) - 2019-10-24
 
 ### Bug Fixes
 
-* more reliable command spawning ([dd2479f](https://github.com/marvinroger/fusee/commit/dd2479f))
+- **eslint:** remove orphan comment rule ([0483582](https://github.com/marvinroger/fusee/commit/0483582))
 
-### [3.3.1](https://github.com/marvinroger/fusee/compare/v3.3.0...v3.3.1) (2019-10-06)
+## [3.3.6](https://github.com/marvinroger/fusee/compare/v3.3.5...v3.3.6) - 2019-10-24
 
+## [3.3.5](https://github.com/marvinroger/fusee/compare/v3.3.4...v3.3.5) - 2019-10-11
 
 ### Bug Fixes
 
-* **eslint:** add more reliable patch ([f4bd223](https://github.com/marvinroger/fusee/commit/f4bd223))
+- CLI was called when building the fusee ([b5c7136](https://github.com/marvinroger/fusee/commit/b5c7136))
+
+## [3.3.4](https://github.com/marvinroger/fusee/compare/v3.3.3...v3.3.4) - 2019-10-11
+
+### Bug Fixes
+
+- use local bin instead of execa ([cfd7f74](https://github.com/marvinroger/fusee/commit/cfd7f74))
+
+## [3.3.3](https://github.com/marvinroger/fusee/compare/v3.3.2...v3.3.3) - 2019-10-06
+
+### Bug Fixes
+
+- fix command spawning ([6df3b0a](https://github.com/marvinroger/fusee/commit/6df3b0a))
+
+## [3.3.2](https://github.com/marvinroger/fusee/compare/v3.3.1...v3.3.2) - 2019-10-06
+
+### Bug Fixes
+
+- more reliable command spawning ([dd2479f](https://github.com/marvinroger/fusee/commit/dd2479f))
+
+## [3.3.1](https://github.com/marvinroger/fusee/compare/v3.3.0...v3.3.1) - 2019-10-06
+
+### Bug Fixes
+
+- **eslint:** add more reliable patch ([f4bd223](https://github.com/marvinroger/fusee/commit/f4bd223))
 
 ## [3.3.0](https://github.com/marvinroger/fusee/compare/v3.2.2...v3.3.0) (2019-08-28)
 
-
 ### Features
 
-* read CLI params (like monorepo) directly from the fusee.js file ([e1c1228](https://github.com/marvinroger/fusee/commit/e1c1228))
+- read CLI params (like monorepo) directly from the fusee.js file ([e1c1228](https://github.com/marvinroger/fusee/commit/e1c1228))
 
-### [3.2.2](https://github.com/marvinroger/fusee/compare/v3.2.1...v3.2.2) (2019-08-18)
-
-
-### Bug Fixes
-
-* fix package build ([36cdabc](https://github.com/marvinroger/fusee/commit/36cdabc))
-
-### [3.2.1](https://github.com/marvinroger/fusee/compare/v3.2.0...v3.2.1) (2019-08-18)
-
+## [3.2.2](https://github.com/marvinroger/fusee/compare/v3.2.1...v3.2.2) - 2019-08-18
 
 ### Bug Fixes
 
-* fix compilation errors ([ac1586f](https://github.com/marvinroger/fusee/commit/ac1586f))
+- fix package build ([36cdabc](https://github.com/marvinroger/fusee/commit/36cdabc))
+
+## [3.2.1](https://github.com/marvinroger/fusee/compare/v3.2.0...v3.2.1) - 2019-08-18
+
+### Bug Fixes
+
+- fix compilation errors ([ac1586f](https://github.com/marvinroger/fusee/commit/ac1586f))
 
 ## [3.2.0](https://github.com/marvinroger/fusee/compare/v3.1.3...v3.2.0) (2019-08-18)
 
-
 ### Bug Fixes
 
-* fix bad lint-staged config ([d3c4d5f](https://github.com/marvinroger/fusee/commit/d3c4d5f))
-
+- fix bad lint-staged config ([d3c4d5f](https://github.com/marvinroger/fusee/commit/d3c4d5f))
 
 ### Features
 
-* **eslint:** enable eslint recommended ([84c53e0](https://github.com/marvinroger/fusee/commit/84c53e0))
-* **ts:** emit declaration and enable incremental compilation ([c75b218](https://github.com/marvinroger/fusee/commit/c75b218))
+- **eslint:** enable eslint recommended ([84c53e0](https://github.com/marvinroger/fusee/commit/84c53e0))
+- **ts:** emit declaration and enable incremental compilation ([c75b218](https://github.com/marvinroger/fusee/commit/c75b218))
 
-### [3.1.3](https://github.com/marvinroger/fusee/compare/v3.1.2...v3.1.3) (2019-08-04)
-
-
-### Bug Fixes
-
-* add missing dependencies ([392c8ab](https://github.com/marvinroger/fusee/commit/392c8ab))
-
-### [3.1.2](https://github.com/marvinroger/fusee/compare/v3.1.1...v3.1.2) (2019-08-04)
-
+## [3.1.3](https://github.com/marvinroger/fusee/compare/v3.1.2...v3.1.3) - 2019-08-04
 
 ### Bug Fixes
 
-* remove ESLint deps from peerDependencies ([317a24c](https://github.com/marvinroger/fusee/commit/317a24c))
+- add missing dependencies ([392c8ab](https://github.com/marvinroger/fusee/commit/392c8ab))
 
-### [3.1.1](https://github.com/marvinroger/fusee/compare/v3.1.0...v3.1.1) (2019-08-04)
-
+## [3.1.2](https://github.com/marvinroger/fusee/compare/v3.1.1...v3.1.2) - 2019-08-04
 
 ### Bug Fixes
 
-* move ESLint dependencies to dependencies field ([ad4bf56](https://github.com/marvinroger/fusee/commit/ad4bf56))
+- remove ESLint deps from peerDependencies ([317a24c](https://github.com/marvinroger/fusee/commit/317a24c))
+
+## [3.1.1](https://github.com/marvinroger/fusee/compare/v3.1.0...v3.1.1) - 2019-08-04
+
+### Bug Fixes
+
+- move ESLint dependencies to dependencies field ([ad4bf56](https://github.com/marvinroger/fusee/commit/ad4bf56))
 
 ## [3.1.0](https://github.com/marvinroger/fusee/compare/v3.0.2...v3.1.0) (2019-08-03)
 
-
 ### Features
 
-* add ESLint dependencies resolver patch ([42f19bc](https://github.com/marvinroger/fusee/commit/42f19bc))
+- add ESLint dependencies resolver patch ([42f19bc](https://github.com/marvinroger/fusee/commit/42f19bc))
 
-### [3.0.2](https://github.com/marvinroger/fusee/compare/v3.0.1...v3.0.2) (2019-07-09)
-
-
-### Bug Fixes
-
-* disable some node eslint rules for TS ([8601976](https://github.com/marvinroger/fusee/commit/8601976))
-
-
-
-### [3.0.1](https://github.com/marvinroger/fusee/compare/v3.0.0...v3.0.1) (2019-07-09)
-
+## [3.0.2](https://github.com/marvinroger/fusee/compare/v3.0.1...v3.0.2) - 2019-07-09
 
 ### Bug Fixes
 
-* TS interface not exported ([8c9795a](https://github.com/marvinroger/fusee/commit/8c9795a))
+- disable some node eslint rules for TS ([8601976](https://github.com/marvinroger/fusee/commit/8601976))
 
+## [3.0.1](https://github.com/marvinroger/fusee/compare/v3.0.0...v3.0.1) - 2019-07-09
 
+### Bug Fixes
+
+- TS interface not exported ([8c9795a](https://github.com/marvinroger/fusee/commit/8c9795a))
 
 ## [3.0.0](https://github.com/marvinroger/fusee/compare/v2.2.1...v3.0.0) (2019-07-09)
 
-
 ### Bug Fixes
 
-* bin could not be run when `bin` as string ([9370251](https://github.com/marvinroger/fusee/commit/9370251))
-
+- bin could not be run when `bin` as string ([9370251](https://github.com/marvinroger/fusee/commit/9370251))
 
 ### Features
 
-* add global settings and enhance ESLint rules ([e5462ec](https://github.com/marvinroger/fusee/commit/e5462ec))
-
+- add global settings and enhance ESLint rules ([e5462ec](https://github.com/marvinroger/fusee/commit/e5462ec))
 
 ### BREAKING CHANGES
 
-* the way of accessing configuration changes
+- the way of accessing configuration changes
 
-
-
-### [2.2.1](https://github.com/marvinroger/fusee/compare/v2.2.0...v2.2.1) (2019-07-09)
-
+## [2.2.1](https://github.com/marvinroger/fusee/compare/v2.2.0...v2.2.1) - 2019-07-09
 
 ### Bug Fixes
 
-* **prettier:** ignore CHANGELOG.md ([fb7a2de](https://github.com/marvinroger/fusee/commit/fb7a2de))
-
-
+- **prettier:** ignore CHANGELOG.md ([fb7a2de](https://github.com/marvinroger/fusee/commit/fb7a2de))
 
 ## [2.2.0](https://github.com/marvinroger/fusee/compare/v2.1.0...v2.2.0) (2019-07-09)
 
-
 ### Features
 
-* make the bin resolver compatible with Yarn PnP ([7ab3d8c](https://github.com/marvinroger/fusee/commit/7ab3d8c))
-
-
+- make the bin resolver compatible with Yarn PnP ([7ab3d8c](https://github.com/marvinroger/fusee/commit/7ab3d8c))
 
 ## [2.1.0](https://github.com/marvinroger/fusee/compare/v2.0.1...v2.1.0) (2019-07-08)
 
-
 ### Features
 
-* add .prettierignore to avoid formatting useless files ([cfdcb1e](https://github.com/marvinroger/fusee/commit/cfdcb1e))
+- add .prettierignore to avoid formatting useless files ([cfdcb1e](https://github.com/marvinroger/fusee/commit/cfdcb1e))
 
-
-
-### [2.0.1](https://github.com/marvinroger/js-dev-core/compare/v2.0.0...v2.0.1) (2019-07-08)
-
+## [2.0.1](https://github.com/marvinroger/js-dev-core/compare/v2.0.0...v2.0.1) - 2019-07-08
 
 ### Bug Fixes
 
-* fix lint-staged configuration after upgrade ([7b441db](https://github.com/marvinroger/js-dev-core/commit/7b441db))
-* migrate assets "dev-core" to fusee ([7b1db98](https://github.com/marvinroger/js-dev-core/commit/7b1db98))
-
-
+- fix lint-staged configuration after upgrade ([7b441db](https://github.com/marvinroger/js-dev-core/commit/7b441db))
+- migrate assets "dev-core" to fusee ([7b1db98](https://github.com/marvinroger/js-dev-core/commit/7b1db98))
 
 ## [2.0.0](https://github.com/marvinroger/js-dev-core/compare/v1.11.0...v2.0.0) (2019-07-08)
 
-
 ### Features
 
-* rename dev-core to fusee ([2d3536c](https://github.com/marvinroger/js-dev-core/commit/2d3536c))
-
+- rename dev-core to fusee ([2d3536c](https://github.com/marvinroger/js-dev-core/commit/2d3536c))
 
 ### BREAKING CHANGES
 
-* the npm package changes too
-
-
+- the npm package changes too
 
 ## [1.11.0](https://github.com/marvinroger/js-dev-core/compare/v1.9.3...v1.11.0) (2019-06-06)
 
-
 ### Bug Fixes
 
-* prevent eslint error because of unmatching pattern ([c06b7e0](https://github.com/marvinroger/js-dev-core/commit/c06b7e0))
-
+- prevent eslint error because of unmatching pattern ([c06b7e0](https://github.com/marvinroger/js-dev-core/commit/c06b7e0))
 
 ### Features
 
-* add support for monorepos ([f3813bf](https://github.com/marvinroger/js-dev-core/commit/f3813bf))
-
-
+- add support for monorepos ([f3813bf](https://github.com/marvinroger/js-dev-core/commit/f3813bf))
 
 ## [1.10.0](https://github.com/marvinroger/js-dev-core/compare/v1.9.3...v1.10.0) (2019-06-06)
 
-
 ### Features
 
-* add support for monorepos ([eef8f6a](https://github.com/marvinroger/js-dev-core/commit/eef8f6a))
+- add support for monorepos ([eef8f6a](https://github.com/marvinroger/js-dev-core/commit/eef8f6a))
 
-
-
-### [1.9.3](https://github.com/marvinroger/js-dev-core/compare/v1.9.2...v1.9.3) (2019-04-24)
-
+## [1.9.3](https://github.com/marvinroger/js-dev-core/compare/v1.9.2...v1.9.3) - 2019-04-24
 
 ### Bug Fixes
 
-* add eslint dependencies as peerDependencies ([89397f1](https://github.com/marvinroger/js-dev-core/commit/89397f1))
+- add eslint dependencies as peerDependencies ([89397f1](https://github.com/marvinroger/js-dev-core/commit/89397f1))
 
-
-
-### [1.9.2](https://github.com/marvinroger/js-dev-core/compare/v1.9.1...v1.9.2) (2019-04-12)
-
+## [1.9.2](https://github.com/marvinroger/js-dev-core/compare/v1.9.1...v1.9.2) - 2019-04-12
 
 ### Bug Fixes
 
-* allow expressions not having an explicit return type ([a444c31](https://github.com/marvinroger/js-dev-core/commit/a444c31))
+- allow expressions not having an explicit return type ([a444c31](https://github.com/marvinroger/js-dev-core/commit/a444c31))
 
-
-
-### [1.9.1](https://github.com/marvinroger/js-dev-core/compare/v1.9.0...v1.9.1) (2019-04-12)
-
+## [1.9.1](https://github.com/marvinroger/js-dev-core/compare/v1.9.0...v1.9.1) - 2019-04-12
 
 ### Bug Fixes
 
-* commit-msg hook param passing ([c5e9e1f](https://github.com/marvinroger/js-dev-core/commit/c5e9e1f))
-
-
+- commit-msg hook param passing ([c5e9e1f](https://github.com/marvinroger/js-dev-core/commit/c5e9e1f))
 
 ## [1.9.0](https://github.com/marvinroger/js-dev-core/compare/v1.8.3...v1.9.0) (2019-04-12)
 
-
 ### Features
 
-* add commit, release and changelog creation/lint ([a88a6c0](https://github.com/marvinroger/js-dev-core/commit/a88a6c0))
+- add commit, release and changelog creation/lint ([a88a6c0](https://github.com/marvinroger/js-dev-core/commit/a88a6c0))

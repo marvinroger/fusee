@@ -4,12 +4,12 @@ const config = {
   extends: ['@commitlint/config-conventional'],
 }
 
-export function buildGetCommitlintConfig(_fuseeParams: FuseeParams) {
+export function buildCommitlint(_fuseeParams: FuseeParams) {
   /**
    * Get the commitlint configuration object
    */
-  function get(): typeof config {
-    return config
+  function get(merge?: any): typeof config {
+    return { ...config, ...merge }
   }
 
   return get

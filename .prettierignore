@@ -2,6 +2,5 @@ node_modules/
 pkg/
 dist/
 
-CHANGELOG.md
 package.json
 yarn.lock
