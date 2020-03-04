@@ -11,7 +11,7 @@ export function buildHusky(_fuseeParams: FuseeParams) {
   /**
    * Get the Husky configuration object
    */
-  function get(merge?: any): typeof config {
+  function get<T extends {}>(merge: T): typeof config & T {
     return { ...config, ...merge }
   }
 

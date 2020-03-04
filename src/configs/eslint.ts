@@ -73,7 +73,7 @@ export function buildEslint(fuseeParams: FuseeParams) {
   /**
    * Get the ESLint configuration object
    */
-  function get(merge?: any): ReturnType<typeof makeConfig> {
+  function get<T extends {}>(merge: T): ReturnType<typeof makeConfig> & T {
     return { ...makeConfig(fuseeParams), ...merge }
   }
 

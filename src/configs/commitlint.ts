@@ -8,7 +8,7 @@ export function buildCommitlint(_fuseeParams: FuseeParams) {
   /**
    * Get the commitlint configuration object
    */
-  function get(merge?: any): typeof config {
+  function get<T extends {}>(merge: T): typeof config & T {
     return { ...config, ...merge }
   }
 

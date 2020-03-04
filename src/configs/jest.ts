@@ -20,7 +20,7 @@ export function buildJest(_fuseeParams: FuseeParams) {
   /**
    * Get the Jest configuration object
    */
-  function get(merge?: any): typeof config {
+  function get<T extends {}>(merge: T): typeof config & T {
     return { ...config, ...merge }
   }
 
