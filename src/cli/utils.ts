@@ -1,7 +1,10 @@
 import execa from 'execa'
 import findRoot from 'find-root'
 import findYarnWorkspaceRoot from 'find-yarn-workspace-root'
+import path from 'path'
 import { Err, Ok, Result } from 'rust-option'
+import { FUSEE_FILE_NAME } from 'src/constants'
+import { fusee } from '../fusee'
 
 export async function runLocalBin(
   command: string,
@@ -21,7 +24,7 @@ export async function runLocalBin(
  *
  * @returns the package root path
  */
-export const getPackageRoot = (): Result<string, Error> => {
+const getPackageRoot = (): Result<string, Error> => {
   try {
     return Ok(findRoot(process.cwd()))
   } catch (_err) {
@@ -55,7 +58,7 @@ interface PackageInformation {
  *
  * @returns the package information
  */
-export const getPackageInformation = (): Result<PackageInformation, Error> => {
+const getPackageInformation = (): Result<PackageInformation, Error> => {
   const packageRoot = getPackageRoot()
 
   if (packageRoot.isErr()) {
@@ -82,4 +85,31 @@ export const getPackageInformation = (): Result<PackageInformation, Error> => {
     context,
     root,
   })
+}
+
+/**
+ * Load the fusee and the package information.
+ */
+export function loadContext(): Result<
+  { packageInformation: PackageInformation; fusee: ReturnType<typeof fusee> },
+  Error
+> {
+  const packageInformation = getPackageInformation()
+
+  if (packageInformation.isErr()) {
+    return Err(packageInformation.err().$)
+  }
+
+  const fuseePath = path.join(packageInformation.$.root, FUSEE_FILE_NAME)
+
+  try {
+    const fusee = require(fuseePath)
+
+    return Ok({
+      packageInformation: packageInformation.$,
+      fusee,
+    })
+  } catch {
+    return Err(new Error('Cannot find fusee.js in root'))
+  }
 }

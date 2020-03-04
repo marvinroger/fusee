@@ -2,54 +2,39 @@
 
 import program from 'commander'
 import * as path from 'path'
-import { SRC_GLOB, SRC_GLOB_MONOREPO } from '../constants'
-import { fusee } from '../index'
-import { getPackageInformation, PackageContext, runLocalBin } from './utils'
+import { SRC_GLOB, SRC_GLOB_MONOREPO, SUPPORTED_COMMANDS } from '../constants'
+import { loadContext, PackageContext, runLocalBin } from './utils'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const pkg = require('../../package')
-
-const FUSEE_FILE_NAME = 'fusee.js'
-
-const SUPPORTED_COMMANDS = [
-  'eslint',
-  'prettier',
-  'typedoc',
-  'mrm',
-  'commitlint',
-  'git-cz',
-  'jest',
-  'lint-staged',
-  'release-it',
-]
-
-const TASKS_DIR = path.resolve(__dirname, '../tasks')
-
-const packageInformation = getPackageInformation().$
-const fuseePath = path.join(packageInformation.root, FUSEE_FILE_NAME)
-
-const getFusee = (): ReturnType<typeof fusee> => {
-  try {
-    return require(fuseePath)
-  } catch (_err) {
-    throw new Error('Cannot find fusee.js in root')
-  }
-}
-const FUSEE = getFusee()
-
-program.version(pkg.version)
+program.version(require('../../package').version)
 
 program
   .command('init')
   .description('initialize a project')
   .action(async () => {
-    await runLocalBin('mrm', ['package', 'files', '--dir', TASKS_DIR])
+    await runLocalBin('mrm', [
+      'package',
+      'files',
+      '--dir',
+      path.resolve(__dirname, '../tasks'),
+    ])
+  })
+
+program
+  .command('doctor')
+  .description('check the project is setup correctly')
+  .action(async () => {
+    const context = loadContext().$
+
+    console.log('todo')
   })
 
 program
   .command('run <cmd> [args...]')
   .description('run the given cmd')
   .action(async (cmd: string, args: string[]) => {
+    loadContext().$
+
     if (!SUPPORTED_COMMANDS.includes(cmd)) {
       throw new Error(`${cmd} is not supported`)
     }
@@ -61,7 +46,8 @@ program
   .command('lint [files...]')
   .description('lint and try to fix the code')
   .action(async (files: string[]) => {
-    const pattern = FUSEE._params.monorepo ? SRC_GLOB_MONOREPO : SRC_GLOB
+    const { packageInformation, fusee } = loadContext().$
+    const pattern = fusee._params.monorepo ? SRC_GLOB_MONOREPO : SRC_GLOB
 
     let toCheck = [path.join(packageInformation.root, pattern)]
     if (files.length) {
@@ -81,6 +67,7 @@ program
   .command('test')
   .description('run the tests')
   .action(async () => {
+    const { packageInformation, fusee } = loadContext().$
     const { packageRoot, context } = packageInformation
     if (context === PackageContext.MonorepoRoot) {
       throw new Error('You must be in the context of a workspace package')
@@ -100,6 +87,7 @@ program
   .command('release')
   .description('release the package')
   .action(async (params: string[]) => {
+    const { packageInformation, fusee } = loadContext().$
     const { packageRoot, context } = packageInformation
     if (context === PackageContext.MonorepoRoot) {
       throw new Error('You must be in the context of a workspace package')
@@ -112,6 +100,7 @@ program
   .command('generate-docs')
   .description('generate the docs')
   .action(async () => {
+    const { packageInformation, fusee } = loadContext().$
     const { packageRoot, context } = packageInformation
     if (context === PackageContext.MonorepoRoot) {
       throw new Error('You must be in the context of a workspace package')
