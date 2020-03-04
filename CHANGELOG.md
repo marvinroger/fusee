@@ -10,10 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `fusee commit`, an alias for `fusee run git-cz`
+- `release-it` was added
 
 ### Removed
 
-- **BREAKING**: `standard-version` is not used anymore. `fusee run standard-version` must be replaced with `fusee release`
+- **BREAKING**: `standard-version` is not used anymore. `fusee run standard-version` must be replaced with `fusee release`, which uses `release-it` behind the scene
 
 ### Changed
 

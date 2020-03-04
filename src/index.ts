@@ -1,1 +1,1 @@
-export { buildFusee } from './fusee'
+export { fusee } from './fusee'

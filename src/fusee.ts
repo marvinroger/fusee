@@ -4,6 +4,7 @@ import { buildHusky } from './configs/husky'
 import { buildJest } from './configs/jest'
 import { buildLintStaged } from './configs/lint-staged'
 import { buildPrettier } from './configs/prettier'
+import { buildReleaseIt } from './configs/release-it'
 
 export interface FuseeParams {
   /* Is the project a monorepo? */
@@ -13,7 +14,7 @@ export interface FuseeParams {
   react?: boolean
 }
 
-export function buildFusee(params: FuseeParams) {
+export function fusee(params: FuseeParams) {
   const { monorepo = false, react = false } = params
 
   const hydratedParams = { monorepo, react }
@@ -26,5 +27,6 @@ export function buildFusee(params: FuseeParams) {
     jest: buildJest(hydratedParams),
     lintStaged: buildLintStaged(hydratedParams),
     prettier: buildPrettier(hydratedParams),
+    releaseIt: buildReleaseIt(hydratedParams),
   }
 }

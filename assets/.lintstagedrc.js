@@ -1,1 +1,1 @@
-module.exports = require('./fusee').getLintStagedConfig()
+module.exports = require('./fusee').lintStaged()

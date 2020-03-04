@@ -5,12 +5,14 @@ import { Err, Ok, Result } from 'rust-option'
 
 export async function runLocalBin(
   command: string,
-  args: string[] = []
+  args: string[] = [],
+  opts: { cwd?: string } = {}
 ): Promise<void> {
   await execa(command, args, {
     preferLocal: true,
     localDir: __dirname,
     stdio: 'inherit',
+    cwd: opts.cwd,
   })
 }
 

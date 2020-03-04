@@ -3,7 +3,7 @@
 import program from 'commander'
 import * as path from 'path'
 import { SRC_GLOB, SRC_GLOB_MONOREPO } from '../constants'
-import { buildFusee } from '../index'
+import { fusee } from '../index'
 import { getPackageInformation, runLocalBin } from './utils'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -20,6 +20,7 @@ const SUPPORTED_COMMANDS = [
   'git-cz',
   'jest',
   'lint-staged',
+  'release-it',
 ]
 
 const TASKS_DIR = path.resolve(__dirname, '../tasks')
@@ -27,7 +28,7 @@ const TASKS_DIR = path.resolve(__dirname, '../tasks')
 const packageInformation = getPackageInformation().$
 const fuseePath = path.join(packageInformation.root, FUSEE_FILE_NAME)
 
-const getFusee = (): ReturnType<typeof buildFusee> => {
+const getFusee = (): ReturnType<typeof fusee> => {
   try {
     return require(fuseePath)
   } catch (_err) {
@@ -94,7 +95,12 @@ program
   .command('release')
   .description('release the package')
   .action(async () => {
-    await runLocalBin('jest', ['--passWithNoTests'])
+    const { isMonorepo, packageRoot, workspaceRoot } = packageInformation
+    if (isMonorepo && workspaceRoot === packageRoot) {
+      throw new Error('You must be in the context of a workspace package')
+    }
+
+    await runLocalBin('release-it', [], { cwd: packageRoot })
   })
 
 program

@@ -54,6 +54,7 @@
     "mrm": "^2.1.0",
     "mrm-core": "^4.0.2",
     "prettier": "^1.18.2",
+    "release-it": "^12.6.3",
     "rust-option": "^0.11.1",
     "ts-jest": "^25.2.1",
     "typedoc": "^0.16.11",
