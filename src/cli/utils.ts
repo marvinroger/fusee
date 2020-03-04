@@ -33,10 +33,20 @@ export const getPackageRoot = (): Result<string, Error> => {
   }
 }
 
+export enum PackageContext {
+  MonorepoRoot = 'monorepoRoot',
+  MonorepoChild = 'monorepoChild',
+  SinglePackage = 'singlePackage',
+}
+
 interface PackageInformation {
+  /** The package root */
   packageRoot: string
+  /** The workspace root, if it's a monorepo */
   workspaceRoot?: string
-  isMonorepo: boolean
+  /** The package context */
+  context: PackageContext
+  /** If it's a monorepo, the workspace root, otherwise, the package root */
   root: string
 }
 
@@ -57,10 +67,19 @@ export const getPackageInformation = (): Result<PackageInformation, Error> => {
   const isMonorepo = workspaceRoot !== null
   const root = isMonorepo ? (workspaceRoot as string) : packageRoot.$
 
+  let context = PackageContext.SinglePackage
+
+  if (isMonorepo) {
+    context =
+      workspaceRoot === packageRoot.$
+        ? PackageContext.MonorepoRoot
+        : PackageContext.MonorepoChild
+  }
+
   return Ok({
     packageRoot: packageRoot.$,
     workspaceRoot,
-    isMonorepo,
+    context,
     root,
   })
 }

@@ -4,7 +4,7 @@ import program from 'commander'
 import * as path from 'path'
 import { SRC_GLOB, SRC_GLOB_MONOREPO } from '../constants'
 import { fusee } from '../index'
-import { getPackageInformation, runLocalBin } from './utils'
+import { getPackageInformation, PackageContext, runLocalBin } from './utils'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const pkg = require('../../package')
@@ -81,7 +81,12 @@ program
   .command('test')
   .description('run the tests')
   .action(async () => {
-    await runLocalBin('jest', ['--passWithNoTests'])
+    const { packageRoot, context } = packageInformation
+    if (context === PackageContext.MonorepoRoot) {
+      throw new Error('You must be in the context of a workspace package')
+    }
+
+    await runLocalBin('jest', ['--passWithNoTests'], { cwd: packageRoot })
   })
 
 program
@@ -94,19 +99,24 @@ program
 program
   .command('release')
   .description('release the package')
-  .action(async () => {
-    const { isMonorepo, packageRoot, workspaceRoot } = packageInformation
-    if (isMonorepo && workspaceRoot === packageRoot) {
+  .action(async (params: string[]) => {
+    const { packageRoot, context } = packageInformation
+    if (context === PackageContext.MonorepoRoot) {
       throw new Error('You must be in the context of a workspace package')
     }
 
-    await runLocalBin('release-it', [], { cwd: packageRoot })
+    await runLocalBin('release-it', params, { cwd: packageRoot })
   })
 
 program
   .command('generate-docs')
   .description('generate the docs')
   .action(async () => {
+    const { packageRoot, context } = packageInformation
+    if (context === PackageContext.MonorepoRoot) {
+      throw new Error('You must be in the context of a workspace package')
+    }
+
     await runLocalBin('typedoc', [
       '--target',
       'ES6',
@@ -119,8 +129,8 @@ program
       '--theme',
       'minimal',
       '--out',
-      path.join(packageInformation.root, 'docs/'),
-      path.join(packageInformation.root, 'src/'),
+      path.join(packageRoot, 'docs/'),
+      path.join(packageRoot, 'src/'),
     ])
   })
 
