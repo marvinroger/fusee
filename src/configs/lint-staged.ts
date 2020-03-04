@@ -9,7 +9,9 @@ export function buildLintStaged(fuseeParams: FuseeParams) {
   /**
    * Get the lint-staged configuration object
    */
-  function get<T extends {}>(merge: T): ReturnType<typeof makeConfig> & T {
+  function get(): ReturnType<typeof makeConfig>
+  function get<T extends {}>(merge: T): ReturnType<typeof makeConfig> & T
+  function get<T extends {}>(merge?: T): any {
     return { ...makeConfig(fuseeParams), ...merge }
   }
 
