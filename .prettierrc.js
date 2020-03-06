@@ -1,1 +1,1 @@
-module.exports = require('./fusee').getPrettierConfig()
+module.exports = require('./fusee').prettier()

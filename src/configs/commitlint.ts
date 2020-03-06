@@ -10,7 +10,7 @@ export function buildCommitlint(_fuseeParams: FuseeParams) {
    */
   function get(): typeof config
   function get<T extends {}>(merge: T): typeof config & T
-  function get<T extends {}>(merge?: T): any {
+  function get<T extends {}>(merge?: T): typeof config | (typeof config & T) {
     return { ...config, ...merge }
   }
 

@@ -1,39 +1,31 @@
 import execa from 'execa'
-import findRoot from 'find-root'
 import findYarnWorkspaceRoot from 'find-yarn-workspace-root'
+import fs from 'fs'
 import path from 'path'
-import { Err, Ok, Result } from 'rust-option'
-import { FUSEE_FILE_NAME } from 'src/constants'
+import pkgDir from 'pkg-dir'
+import nodeResolve from 'resolve'
+import { FUSEE_FILE_NAME } from '../constants'
 import { fusee } from '../fusee'
+
+export async function runBin(
+  command: string,
+  args: string[] = [],
+  opts: { cwd?: string; localDir: string }
+): Promise<void> {
+  await execa(command, args, {
+    preferLocal: true,
+    localDir: opts.localDir,
+    stdio: 'inherit',
+    cwd: opts.cwd,
+  })
+}
 
 export async function runLocalBin(
   command: string,
   args: string[] = [],
   opts: { cwd?: string } = {}
 ): Promise<void> {
-  await execa(command, args, {
-    preferLocal: true,
-    localDir: __dirname,
-    stdio: 'inherit',
-    cwd: opts.cwd,
-  })
-}
-
-/**
- * Get the package root path from the current cwd.
- *
- * @returns the package root path
- */
-const getPackageRoot = (): Result<string, Error> => {
-  try {
-    return Ok(findRoot(process.cwd()))
-  } catch (_err) {
-    return Err(
-      new Error(
-        'Not in the context of a Node.js project (no package.json found in parents)'
-      )
-    )
-  }
+  await runBin(command, args, { ...opts, localDir: __dirname })
 }
 
 export enum PackageContext {
@@ -58,58 +50,96 @@ interface PackageInformation {
  *
  * @returns the package information
  */
-const getPackageInformation = (): Result<PackageInformation, Error> => {
-  const packageRoot = getPackageRoot()
+const getPackageInformation = async (): Promise<PackageInformation> => {
+  const packageRoot = await pkgDir()
 
-  if (packageRoot.isErr()) {
-    return Err(packageRoot.err().$)
+  if (!packageRoot) {
+    throw new Error(
+      'Not in the context of a Node.js project (no package.json found in parents)'
+    )
   }
 
-  const workspaceRoot = findYarnWorkspaceRoot(packageRoot.$) || undefined
+  const workspaceRoot = findYarnWorkspaceRoot(packageRoot) || undefined
 
-  const isMonorepo = workspaceRoot !== null
-  const root = isMonorepo ? (workspaceRoot as string) : packageRoot.$
+  const isMonorepo = workspaceRoot !== undefined
+  const root = isMonorepo ? (workspaceRoot as string) : packageRoot
 
   let context = PackageContext.SinglePackage
 
   if (isMonorepo) {
     context =
-      workspaceRoot === packageRoot.$
+      workspaceRoot === packageRoot
         ? PackageContext.MonorepoRoot
         : PackageContext.MonorepoChild
   }
 
-  return Ok({
-    packageRoot: packageRoot.$,
+  return {
+    packageRoot: packageRoot,
     workspaceRoot,
     context,
     root,
-  })
+  }
+}
+
+export interface Context {
+  packageInformation: PackageInformation
+  fusee: ReturnType<typeof fusee>
 }
 
 /**
  * Load the fusee and the package information.
  */
-export function loadContext(): Result<
-  { packageInformation: PackageInformation; fusee: ReturnType<typeof fusee> },
-  Error
-> {
-  const packageInformation = getPackageInformation()
+export async function loadContext(): Promise<Context> {
+  const packageInformation = await getPackageInformation()
 
-  if (packageInformation.isErr()) {
-    return Err(packageInformation.err().$)
-  }
-
-  const fuseePath = path.join(packageInformation.$.root, FUSEE_FILE_NAME)
+  const fuseePath = path.join(packageInformation.root, FUSEE_FILE_NAME)
 
   try {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const fusee = require(fuseePath)
 
-    return Ok({
-      packageInformation: packageInformation.$,
+    return {
+      packageInformation,
       fusee,
-    })
+    }
   } catch {
-    return Err(new Error('Cannot find fusee.js in root'))
+    throw new Error(
+      'Cannot load fusee.js in root. Make sure it exists, and is valid'
+    )
   }
+}
+
+/**
+ * Read a file.
+ *
+ * @returns the content of the file
+ */
+export function readFile(path: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    fs.readFile(path, { encoding: 'utf8' }, (err, data) => {
+      if (err) {
+        return reject(err)
+      }
+
+      return resolve(data)
+    })
+  })
+}
+
+/**
+ * Resolve the version of a package.
+ */
+export async function resolveVersion(
+  id: string,
+  params: { from: string }
+): Promise<string | undefined> {
+  return new Promise(resolve => {
+    nodeResolve(id, { basedir: params.from }, (err, resolved, pkg) => {
+      if (err || !resolved) {
+        return resolve(undefined)
+      }
+
+      resolve(pkg?.version)
+    })
+  })
 }

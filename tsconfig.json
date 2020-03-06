@@ -5,7 +5,7 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "outDir": "./dist/",
-    "baseUrl": "."
+    "jsx": "react"
   },
   "include": ["./src"],
   "exclude": ["node_modules", "**/__tests__/*"]

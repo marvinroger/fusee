@@ -1,1 +1,1 @@
-module.exports = require('./fusee').getCommitlintConfig()
+module.exports = require('./fusee').commitlint()

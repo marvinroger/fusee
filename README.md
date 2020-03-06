@@ -22,7 +22,7 @@ It makes use of the following stack:
 - [TypeDoc](https://typedoc.org/) for documentation generation
 - [Husky](https://github.com/typicode/husky) / [lint-staged](https://github.com/okonet/lint-staged) for Git hooks
 - [Commitizen](https://github.com/commitizen/cz-cli) / [commitlint](https://github.com/conventional-changelog/commitlint) for Git commit messages ([Conventional Commits](https://www.conventionalcommits.org) format)
-- [Standard Version](https://github.com/conventional-changelog/standard-version) for release versioning and CHANGELOG generation
+- [release-it](https://github.com/release-it/release-it) for release
 
 ## Install
 

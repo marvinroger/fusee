@@ -1,1 +1,1 @@
-module.exports = require('./fusee').getHuskyConfig()
+module.exports = require('./fusee').husky()
