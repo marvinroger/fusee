@@ -81,6 +81,8 @@ module.exports = require('./fusee').eslint()
 fusee lint [files...]
 ```
 
+By default, all `src/` files will be linted, or the specified `files`.
+
 ### Test
 
 Test the code with Jest.
@@ -177,8 +179,10 @@ module.exports = require('./fusee').releaseIt()
 #### Usage
 
 ```bash
-fusee release
+fusee release [params...]
 ```
+
+`params` is optional. These parameters will be passed to the `release-it` cli.
 
 ### Git hooks
 
@@ -195,6 +199,24 @@ These checks should be done on the CI.
 #### Requirements
 
 The `Lint / format` requirements must be met.
+
+Run:
+
+```bash
+yarn add --dev husky
+```
+
+Create a `.lintstagedrc.js` with the following content:
+
+```js
+module.exports = require('@marvinroger/fusee').lintStaged()
+```
+
+Create a `.commitlintrc.js` with the following content:
+
+```js
+module.exports = require('@marvinroger/fusee').commitlint()
+```
 
 #### Usage
 

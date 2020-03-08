@@ -107,7 +107,7 @@ program
   })
 
 program
-  .command('release')
+  .command('release [params...]')
   .description('release the package')
   .action(async (params: string[]) => {
     const context = await loadContext()
