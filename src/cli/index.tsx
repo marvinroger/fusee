@@ -20,18 +20,6 @@ import { loadContext, PackageContext, runBin, runLocalBin } from './utils'
 program.version(require('../../package').version)
 
 program
-  .command('init')
-  .description('initialize a project')
-  .action(async () => {
-    await runLocalBin('mrm', [
-      'package',
-      'files',
-      '--dir',
-      path.resolve(__dirname, '../tasks'),
-    ])
-  })
-
-program
   .command('doctor')
   .description('check if the project is setup correctly')
   .action(async () => {

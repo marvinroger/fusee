@@ -24,20 +24,26 @@ It makes use of the following stack:
 - [Commitizen](https://github.com/commitizen/cz-cli) / [commitlint](https://github.com/conventional-changelog/commitlint) for Git commit messages ([Conventional Commits](https://www.conventionalcommits.org) format)
 - [release-it](https://github.com/release-it/release-it) for release
 
+Each of these tools is opt-in.
+
 ## Install
 
 ```bash
-yarn global add @marvinroger/fusee
+yarn add --dev @marvinroger/fusee typescript
 ```
 
-Then, inside a blank Node.js project, run `fusee init`.
-This will install the stack, and add the correct scripts inside the `package.json`.
+Create a `fusee.js` file in your package, with the following content:
 
-## Installed scripts
-
-```bash
-yarn lint [files...]
+```js
+module.exports = require('@marvinroger/fusee').fusee({
+  monorepo: false, // whether your project is a monorepo
+  react: true, // whether your project is using React
+})
 ```
+
+## Usage (each "action" is opt-in)
+
+### Lint / format
 
 Lint the code with ESlint and Prettier, trying to fix what's fixable.
 This runs `eslint --fix` and `prettier --write` on:
@@ -49,45 +55,132 @@ This runs `eslint --fix` and `prettier --write` on:
 The ESLint config can be found at ⚙ [src/configs/eslint.ts](src/configs/eslint.ts), and
 the Prettier config at ⚙ [src/configs/prettier.ts](src/configs/prettier.ts).
 
----
+#### Requirements
+
+Run:
 
 ```bash
-yarn test
+yarn add --dev eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-jest eslint-plugin-node eslint-config-prettier eslint-plugin-prettier eslint-plugin-promise
 ```
 
+Also, if your fusee is setup with `react: true`:
+
+```bash
+yarn add --dev eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
+```
+
+Then, create a `.eslintrc.js` file in your package, with the following content:
+
+```js
+module.exports = require('./fusee').eslint()
+```
+
+#### Usage
+
+```bash
+fusee lint [files...]
+```
+
+### Test
+
 Test the code with Jest.
-This runs jest `--passWithNoTests` with the default Jest config, with TS supported and with
-the `/pkg/` path excluded.
+This runs jest `--passWithNoTests` with the default Jest config, with TS supported.
 
 The Jest config can be found at ⚙ [src/configs/jest.ts](src/configs/jest.ts).
 
----
+#### Requirements
+
+Run:
 
 ```bash
-yarn generate-docs
+yarn add --dev jest ts-jest @types/jest
 ```
+
+Then, create a `jest.config.js` file in your package, with the following content:
+
+```js
+// note: if you have a monorepo, you'll want to reference the workspace
+// `fusee.js`, so you'll more likely have `require('../fusee')`
+module.exports = require('./fusee').jest()
+```
+
+#### Usage
+
+```bash
+fusee test
+```
+
+### Docs generation
 
 Generate the HTML docs from the TypeScript code, into the `docs/` directory.
 
 **Note:** Due to a TypeDoc restriction, every single exported method will be documented (even if not exported from the entry-point). To ignore such methods, add a `@hidden` annotation.
 
----
+#### Requirements
+
+Run:
 
 ```bash
-yarn commit
+yarn add --dev typedoc
 ```
 
-Commit with a [Conventional Commits](https://www.conventionalcommits.org) compatible format.
-
----
+#### Usage
 
 ```bash
-yarn release
+fusee generate-docs
 ```
+
+### Commit
+
+Commit interactively with a [Conventional Commits](https://www.conventionalcommits.org) compatible format.
+
+#### Requirements
+
+In your `package.json`, add:
+
+```json
+{
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
+```
+
+#### Usage
+
+```bash
+fusee commit
+```
+
+### Release
 
 Bump `package.json` according to the commits, update `CHANGELOG.md` and tag a new release.
 
-## Installed Git hooks
+#### Requirements
+
+Run:
+
+```bash
+yarn add --dev release-it
+```
+
+Then, create a `.release-it.js` file in your package, with the following content:
+
+```js
+// note: if you have a monorepo, you'll want to reference the workspace
+// `fusee.js`, so you'll more likely have `require('../fusee')`
+module.exports = require('./fusee').releaseIt()
+```
+
+#### Usage
+
+```bash
+fusee release
+```
+
+### Git hooks
 
 The Husky config can be found at ⚙ [src/configs/husky.ts](src/configs/husky.ts).
 The following hooks are set:
@@ -98,3 +191,11 @@ The following hooks are set:
 
 There is no `pre-push` hook, as it might take too long to build or test the project.
 These checks should be done on the CI.
+
+#### Requirements
+
+The `Lint / format` requirements must be met.
+
+#### Usage
+
+Just use Git normally.

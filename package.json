@@ -19,10 +19,10 @@
   "scripts": {
     "build": "rimraf dist/ && tsc",
     "self-fusee": "node dist/cli/index.js",
-    "lint": "yarn run self-fusee lint",
-    "test": "yarn run self-fusee test",
-    "commit": "yarn run self-fusee commit",
-    "release": "yarn run self-fusee release",
+    "lint": "yarn self-fusee lint",
+    "test": "yarn self-fusee test",
+    "commit": "yarn self-fusee commit",
+    "release": "yarn self-fusee release",
     "prepublishOnly": "yarn lint && yarn build && yarn test"
   },
   "bin": "./dist/cli/index.js",
@@ -40,8 +40,6 @@
     "ink": "^2.7.1",
     "jest-config": "^25.1.0",
     "lint-staged": "^10.0.8",
-    "mrm": "^2.1.0",
-    "mrm-core": "^4.0.2",
     "pkg-dir": "^4.2.0",
     "react": "^16.13.0",
     "resolve": "^1.15.1",
@@ -67,6 +65,9 @@
     "rimraf": "^3.0.0",
     "typedoc": "^0.16.11",
     "typescript": "^3.8.3"
+  },
+  "peerDependencies": {
+    "typescript": "^3.0.0"
   },
   "config": {
     "commitizen": {
