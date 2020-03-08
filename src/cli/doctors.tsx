@@ -6,7 +6,7 @@ import {
   REQUIRED_RELEASE_IT_PACKAGES,
   REQUIRED_TYPEDOC_PACKAGES,
   REQUIRED_TYPESCRIPT_PACKAGES,
-} from '../dependencies'
+} from '../requirements'
 import { Context, resolveVersion } from './utils'
 
 export interface DoctorReport {

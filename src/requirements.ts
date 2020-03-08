@@ -31,7 +31,7 @@ export const REQUIRED_JEST_PACKAGES = {
 }
 
 export const REQUIRED_RELEASE_IT_PACKAGES = {
-  'release-it': '^12.0.0',
+  'release-it': '^13.0.0',
 }
 
 export const REQUIRED_TYPEDOC_PACKAGES = {
