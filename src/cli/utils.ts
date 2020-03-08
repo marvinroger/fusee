@@ -134,12 +134,32 @@ export async function resolveVersion(
   params: { from: string }
 ): Promise<string | undefined> {
   return new Promise(resolve => {
-    nodeResolve(id, { basedir: params.from }, (err, resolved, pkg) => {
-      if (err || !resolved) {
-        return resolve(undefined)
-      }
+    nodeResolve(
+      id,
+      {
+        basedir: params.from,
+        /**
+         * In `@types/` packages, there's no valid `main` file.
+         * Therefore, `resolve` returns a `MODULE_NOT_FOUND` error.
+         * We only want to see if it's installed, so as a workaround,
+         * we set, for these packages, the `package.json` file as the
+         * entrypoint.
+         */
+        packageFilter: pkg => {
+          if (!pkg.main) {
+            pkg.main = 'package.json'
+          }
 
-      resolve(pkg?.version)
-    })
+          return pkg
+        },
+      },
+      (err, resolved, pkg) => {
+        if (err || !resolved) {
+          return resolve(undefined)
+        }
+
+        resolve(pkg?.version)
+      }
+    )
   })
 }
