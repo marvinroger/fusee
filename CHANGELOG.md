@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **BREAKING**: a project `tsconfig.json` must now extend `@marvinroger/fusee/tsconfig.base` instead of `@marvinroger/fusee/tsconfig`
 - **BREAKING**: node support is limited to `>= 10.0.0`
+- **BREAKING**: prettier is updated to `^2.0.0`, which might format differently
 - **BREAKING**: ESLint patches (`require('@marvinroger/fusee/patches/eslint-deps')`) are removed. The required ESLint plugins must now be installed by your project. `fusee doctor` will report the missing dependencies
 - **BREAKING**: renamed the `get*Config` functions:
   - `getCommitlintConfig()` to `commitlint()`

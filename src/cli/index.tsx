@@ -157,20 +157,12 @@ program
     )
   })
 
-program.on('command:*', () => {
-  throw new Error(
-    `Invalid command: ${program.args.join(
-      ' '
-    )}\nSee --help for a list of available commands.`
-  )
-})
-
 const handleError = (err: Error) => {
   render(<ErrorMessage message={err.message} />)
   process.exitCode = 1
 }
 
-process.on('uncaughtException', err => {
+process.on('uncaughtException', (err) => {
   handleError(err)
 })
 

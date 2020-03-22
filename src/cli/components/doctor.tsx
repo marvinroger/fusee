@@ -2,7 +2,7 @@ import { Box, Color, Text } from 'ink'
 import React, { ReactNode, useMemo } from 'react'
 import { DoctorReport } from '../doctors'
 
-const Header = React.memo(props => (
+const Header = React.memo((props) => (
   <Box marginY={1}>
     <Text bold>{props.children}</Text>
   </Box>
@@ -20,7 +20,7 @@ interface InformationProps {
   children: ReactNode
 }
 
-const Information = React.memo<InformationProps>(props => {
+const Information = React.memo<InformationProps>((props) => {
   const indicator = useMemo(() => {
     const { type } = props
 
@@ -68,14 +68,14 @@ export const DoctorReportView = React.memo<DoctorReportViewProps>(
       )}
 
       {report.errors.length > 0 &&
-        report.errors.map(error => (
+        report.errors.map((error) => (
           <Information key={error} type={InformationType.Error}>
             {error}
           </Information>
         ))}
 
       {report.warnings.length > 0 &&
-        report.warnings.map(warning => (
+        report.warnings.map((warning) => (
           <Information key={warning} type={InformationType.Warning}>
             {warning}
           </Information>

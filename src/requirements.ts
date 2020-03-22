@@ -21,7 +21,7 @@ export const REQUIRED_ESLINT_PACKAGES = {
 }
 
 export const REQUIRED_PRETTIER_PACKAGES = {
-  prettier: '^1.0.0',
+  prettier: '^2.0.0',
 }
 
 export const REQUIRED_JEST_PACKAGES = {
@@ -35,5 +35,5 @@ export const REQUIRED_RELEASE_IT_PACKAGES = {
 }
 
 export const REQUIRED_TYPEDOC_PACKAGES = {
-  typedoc: '^0.16.11',
+  typedoc: '^0.17.1',
 }

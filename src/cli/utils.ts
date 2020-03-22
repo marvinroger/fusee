@@ -133,7 +133,7 @@ export async function resolveVersion(
   id: string,
   params: { from: string }
 ): Promise<string | undefined> {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     nodeResolve(
       id,
       {
@@ -145,7 +145,7 @@ export async function resolveVersion(
          * we set, for these packages, the `package.json` file as the
          * entrypoint.
          */
-        packageFilter: pkg => {
+        packageFilter: (pkg) => {
           if (!pkg.main) {
             pkg.main = 'package.json'
           }
