@@ -105,6 +105,14 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.0"
 
+"@babel/runtime-corejs3@^7.8.3":
+  version "7.9.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.9.2.tgz#26fe4aa77e9f1ecef9b776559bbb8e84d34284b7"
+  integrity sha512-HHxmgxbIzOfFlZ+tdeRKtaxWOMUoCG5Mu3wKeUmOxjYrwb3AAHgnmtCUbPPK11/raIWLIBK250t8E2BPO0p7jA==
+  dependencies:
+    core-js-pure "^3.0.0"
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.4.5":
   version "7.5.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.5.2.tgz#98f584f4d03be5d8142c77107ffaedee4d5956f1"
@@ -657,6 +665,17 @@
     regexpp "^3.0.0"
     tsutils "^3.17.1"
 
+"@typescript-eslint/eslint-plugin@^2.24.0":
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-2.24.0.tgz#a86cf618c965a462cddf3601f594544b134d6d68"
+  integrity sha512-wJRBeaMeT7RLQ27UQkDFOu25MqFOBus8PtOa9KaT5ZuxC1kAsd7JEHqWt4YXuY9eancX0GK9C68i5OROnlIzBA==
+  dependencies:
+    "@typescript-eslint/experimental-utils" "2.24.0"
+    eslint-utils "^1.4.3"
+    functional-red-black-tree "^1.0.1"
+    regexpp "^3.0.0"
+    tsutils "^3.17.1"
+
 "@typescript-eslint/experimental-utils@2.22.0", "@typescript-eslint/experimental-utils@^2.5.0":
   version "2.22.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-2.22.0.tgz#4d00c91fbaaa68e56e7869be284999a265707f85"
@@ -664,6 +683,15 @@
   dependencies:
     "@types/json-schema" "^7.0.3"
     "@typescript-eslint/typescript-estree" "2.22.0"
+    eslint-scope "^5.0.0"
+
+"@typescript-eslint/experimental-utils@2.24.0":
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-2.24.0.tgz#a5cb2ed89fedf8b59638dc83484eb0c8c35e1143"
+  integrity sha512-DXrwuXTdVh3ycNCMYmWhUzn/gfqu9N0VzNnahjiDJvcyhfBy4gb59ncVZVxdp5XzBC77dCncu0daQgOkbvPwBw==
+  dependencies:
+    "@types/json-schema" "^7.0.3"
+    "@typescript-eslint/typescript-estree" "2.24.0"
     eslint-scope "^5.0.0"
 
 "@typescript-eslint/parser@^2.1.0":
@@ -676,10 +704,33 @@
     "@typescript-eslint/typescript-estree" "2.22.0"
     eslint-visitor-keys "^1.1.0"
 
+"@typescript-eslint/parser@^2.24.0":
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-2.24.0.tgz#2cf0eae6e6dd44d162486ad949c126b887f11eb8"
+  integrity sha512-H2Y7uacwSSg8IbVxdYExSI3T7uM1DzmOn2COGtCahCC3g8YtM1xYAPi2MAHyfPs61VKxP/J/UiSctcRgw4G8aw==
+  dependencies:
+    "@types/eslint-visitor-keys" "^1.0.0"
+    "@typescript-eslint/experimental-utils" "2.24.0"
+    "@typescript-eslint/typescript-estree" "2.24.0"
+    eslint-visitor-keys "^1.1.0"
+
 "@typescript-eslint/typescript-estree@2.22.0":
   version "2.22.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-2.22.0.tgz#a16ed45876abf743e1f5857e2f4a1c3199fd219e"
   integrity sha512-2HFZW2FQc4MhIBB8WhDm9lVFaBDy6h9jGrJ4V2Uzxe/ON29HCHBTj3GkgcsgMWfsl2U5as+pTOr30Nibaw7qRQ==
+  dependencies:
+    debug "^4.1.1"
+    eslint-visitor-keys "^1.1.0"
+    glob "^7.1.6"
+    is-glob "^4.0.1"
+    lodash "^4.17.15"
+    semver "^6.3.0"
+    tsutils "^3.17.1"
+
+"@typescript-eslint/typescript-estree@2.24.0":
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-2.24.0.tgz#38bbc8bb479790d2f324797ffbcdb346d897c62a"
+  integrity sha512-RJ0yMe5owMSix55qX7Mi9V6z2FDuuDpN6eR5fzRJrp+8in9UF41IGNQHbg5aMK4/PjVaEQksLvz0IA8n+Mr/FA==
   dependencies:
     debug "^4.1.1"
     eslint-visitor-keys "^1.1.0"
@@ -1663,6 +1714,11 @@ copy-descriptor@^0.1.0:
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
+core-js-pure@^3.0.0:
+  version "3.6.4"
+  resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.6.4.tgz#4bf1ba866e25814f149d4e9aaa08c36173506e3a"
+  integrity sha512-epIhRLkXdgv32xIUFaaAry2wdxZYBi6bgM7cB136dzzXXa+dFyRLTZeLUJxnd8ShrmyVXBub63n2NHo2JAt8Cw==
+
 core-js@^2.4.0, core-js@^2.5.0:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
@@ -2097,6 +2153,13 @@ eslint-plugin-jest@^23.8.1:
   dependencies:
     "@typescript-eslint/experimental-utils" "^2.5.0"
 
+eslint-plugin-jest@^23.8.2:
+  version "23.8.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-23.8.2.tgz#6f28b41c67ef635f803ebd9e168f6b73858eb8d4"
+  integrity sha512-xwbnvOsotSV27MtAe7s8uGWOori0nUsrXh2f1EnpmXua8sDfY6VZhHAhHg2sqK7HBNycRQExF074XSZ7DvfoFg==
+  dependencies:
+    "@typescript-eslint/experimental-utils" "^2.5.0"
+
 eslint-plugin-jsx-a11y@^6.2.3:
   version "6.2.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.2.3.tgz#b872a09d5de51af70a97db1eea7dc933043708aa"
@@ -2141,6 +2204,11 @@ eslint-plugin-react-hooks@^2.1.2:
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-2.5.0.tgz#c50ab7ca5945ce6d1cf8248d9e185c80b54171b6"
   integrity sha512-bzvdX47Jx847bgAYf0FPX3u1oxU+mKU8tqrpj4UX9A96SbAmj/HVEefEy6rJUog5u8QIlOPTKZcBpGn5kkKfAQ==
 
+eslint-plugin-react-hooks@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-2.5.1.tgz#4ef5930592588ce171abeb26f400c7fbcbc23cd0"
+  integrity sha512-Y2c4b55R+6ZzwtTppKwSmK/Kar8AdLiC2f9NADCuxbcTgPPg41Gyqa6b9GppgXSvCtkRw43ZE86CT5sejKC6/g==
+
 eslint-plugin-react@^7.14.3:
   version "7.18.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.18.3.tgz#8be671b7f6be095098e79d27ac32f9580f599bc8"
@@ -2156,6 +2224,24 @@ eslint-plugin-react@^7.14.3:
     prop-types "^15.7.2"
     resolve "^1.14.2"
     string.prototype.matchall "^4.0.2"
+
+eslint-plugin-react@^7.19.0:
+  version "7.19.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.19.0.tgz#6d08f9673628aa69c5559d33489e855d83551666"
+  integrity sha512-SPT8j72CGuAP+JFbT0sJHOB80TX/pu44gQ4vXH/cq+hQTiY2PuZ6IHkqXJV6x1b28GDdo1lbInjKUrrdUf0LOQ==
+  dependencies:
+    array-includes "^3.1.1"
+    doctrine "^2.1.0"
+    has "^1.0.3"
+    jsx-ast-utils "^2.2.3"
+    object.entries "^1.1.1"
+    object.fromentries "^2.0.2"
+    object.values "^1.1.1"
+    prop-types "^15.7.2"
+    resolve "^1.15.1"
+    semver "^6.3.0"
+    string.prototype.matchall "^4.0.2"
+    xregexp "^4.3.0"
 
 eslint-scope@^5.0.0:
   version "5.0.0"
@@ -4524,6 +4610,30 @@ mrm-core@^4.0.0, mrm-core@^4.0.2:
     strip-bom "^4.0.0"
     webpack-merge "^4.2.2"
 
+mrm-core@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/mrm-core/-/mrm-core-4.0.3.tgz#7f79b1c3e4300caef91096c38435642ba3ba52a4"
+  integrity sha512-lCQbpUVD6kmh2/u1CZ7ClxIt2+n+4EAGBqss6C3y9T9ql0iwWFUrNOCpa1qt0L5A8qh2VgBYKQe2TK8GbRN9Ww==
+  dependencies:
+    babel-code-frame "^6.26.0"
+    comment-json "^2.2.0"
+    detect-indent "^6.0.0"
+    editorconfig "^0.15.3"
+    find-up "^4.1.0"
+    fs-extra "^8.1.0"
+    js-yaml "^3.13.1"
+    kleur "^3.0.3"
+    listify "^1.0.0"
+    lodash "^4.17.15"
+    minimist "^1.2.0"
+    prop-ini "^0.0.2"
+    readme-badger "^0.3.0"
+    semver "^6.3.0"
+    smpltmpl "^1.0.2"
+    split-lines "^2.0.0"
+    strip-bom "^4.0.0"
+    webpack-merge "^4.2.2"
+
 mrm-preset-default@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/mrm-preset-default/-/mrm-preset-default-2.0.3.tgz#3ba167d8b70bc10e6154cb769081ec7ffd6ad936"
@@ -4547,6 +4657,29 @@ mrm-preset-default@^2.0.3:
     mrm-task-travis "^2.0.2"
     mrm-task-typescript "^2.0.2"
 
+mrm-preset-default@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/mrm-preset-default/-/mrm-preset-default-2.0.4.tgz#5720e1dd36d5c65b40914a9c7c6bebf95d228de3"
+  integrity sha512-c6zWMHPEObgz8YQ7i3zgaKtlpx/Qwqi0oFFhRmRZoKFI7vx7nzPBmjwBejohALs5N5oVowuSo59ZdW8xfxRkew==
+  dependencies:
+    mrm-core "^4.0.3"
+    mrm-task-codecov "^2.0.3"
+    mrm-task-contributing "^2.0.4"
+    mrm-task-editorconfig "^2.0.3"
+    mrm-task-eslint "^2.0.3"
+    mrm-task-gitignore "^2.0.3"
+    mrm-task-jest "^2.0.3"
+    mrm-task-license "^3.0.2"
+    mrm-task-lint-staged "^3.0.2"
+    mrm-task-package "^2.0.3"
+    mrm-task-prettier "^2.0.3"
+    mrm-task-readme "^2.0.3"
+    mrm-task-semantic-release "^3.0.3"
+    mrm-task-styleguidist "^2.0.3"
+    mrm-task-stylelint "^3.0.3"
+    mrm-task-travis "^2.0.3"
+    mrm-task-typescript "^2.0.3"
+
 mrm-task-codecov@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/mrm-task-codecov/-/mrm-task-codecov-2.0.2.tgz#67ba12693d9a7188b79b248690c80f0858c903d6"
@@ -4554,6 +4687,14 @@ mrm-task-codecov@^2.0.2:
   dependencies:
     git-username "^1.0.0"
     mrm-core "^4.0.0"
+
+mrm-task-codecov@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/mrm-task-codecov/-/mrm-task-codecov-2.0.3.tgz#2bce2cc725b3deb879ad42dabb006293bfbdcf19"
+  integrity sha512-/jNLLLVL3u7H/WmpMlPG8JK6mRlCMV9/OiJTUPVIJ5+WbF89PnIggPRqM0ufD/FjbeqcpIN/Z5Z/U0Ulm/R3QQ==
+  dependencies:
+    git-username "^1.0.0"
+    mrm-core "^4.0.3"
 
 mrm-task-contributing@^2.0.3:
   version "2.0.3"
@@ -4563,12 +4704,27 @@ mrm-task-contributing@^2.0.3:
     git-username "^1.0.0"
     mrm-core "^4.0.0"
 
+mrm-task-contributing@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/mrm-task-contributing/-/mrm-task-contributing-2.0.4.tgz#49d7656c3d6c4f9deeacdbe7d41317ddc7fec7e8"
+  integrity sha512-1JQwx7+EG6qyikVHrctFhx12XCL7M132FuswUnLFa2SAG4ztKKBIy3bNUG6OpoP0EcFwCgmEt7vkIjlRx9uQwA==
+  dependencies:
+    git-username "^1.0.0"
+    mrm-core "^4.0.3"
+
 mrm-task-editorconfig@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/mrm-task-editorconfig/-/mrm-task-editorconfig-2.0.2.tgz#c2cee8b80007f83116fde4efdec981ac6592da37"
   integrity sha512-N2EfYpdNNy3XDLTdAk8ZG5EZprz/FkIqH4f3TZT9d2WiVg112kDptWj6lfvaAxzUFvXTxWqVFR+mHtt+ElwYLw==
   dependencies:
     mrm-core "^4.0.0"
+
+mrm-task-editorconfig@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/mrm-task-editorconfig/-/mrm-task-editorconfig-2.0.3.tgz#bfb3bc439d8f8e4c8ae0843869a3b25f22ce3886"
+  integrity sha512-g6t55rKW6LrY8KQ81ELBYxhONtCSSj7XGrJXEDcPbY8QnIIdoSnZ01BGNvHjUocUaOXXtrIHJ45BuQCLJuZEjA==
+  dependencies:
+    mrm-core "^4.0.3"
 
 mrm-task-eslint@^2.0.2:
   version "2.0.2"
@@ -4577,12 +4733,26 @@ mrm-task-eslint@^2.0.2:
   dependencies:
     mrm-core "^4.0.0"
 
+mrm-task-eslint@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/mrm-task-eslint/-/mrm-task-eslint-2.0.3.tgz#75c4dfb2481915fcbb5abf1dce16e5e7eb868f9f"
+  integrity sha512-9SN/68vzmSXhfqZuo2BKRy5iM3+PM9mHM0X7VKCf6fsGyjW6XiM6DKdEShK75CQcZKuiPioyL/UhtthoUjhcEA==
+  dependencies:
+    mrm-core "^4.0.3"
+
 mrm-task-gitignore@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/mrm-task-gitignore/-/mrm-task-gitignore-2.0.2.tgz#6e240564121bb16925af15101e453767c6521aa8"
   integrity sha512-04ylr3ywe+CtXvQrSGeNjznoRCcxBZ/pOUq6g57hzzhZS+Qx5yO+B3bfD7yGWeYXGHSI09rQZq5PhaQqcs3FOw==
   dependencies:
     mrm-core "^4.0.0"
+
+mrm-task-gitignore@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/mrm-task-gitignore/-/mrm-task-gitignore-2.0.3.tgz#6ac1094a543cd46f2e8394a4dd9fd29d4b86be33"
+  integrity sha512-vdBkyZjS5AGevhuB2hkOB3vrf0ldkXZL0etTESMoDO3ktl9mFn4JIjrp6d0fN+NNLMWdEAaIaUfxiSfoTleoEQ==
+  dependencies:
+    mrm-core "^4.0.3"
 
 mrm-task-jest@^2.0.2:
   version "2.0.2"
@@ -4592,12 +4762,28 @@ mrm-task-jest@^2.0.2:
     lodash "^4.17.15"
     mrm-core "^4.0.0"
 
+mrm-task-jest@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/mrm-task-jest/-/mrm-task-jest-2.0.3.tgz#6bdfa0d2b331707369fa13a7db5d04c09df6c804"
+  integrity sha512-JeH7LGV9Ihc1CwmFqh7/84VwFe3H0bdOdrmJDzsPAn+oWVXnACp42ggTEuBCxa1QcPIwaJ3kccrjAjG4/CRPJw==
+  dependencies:
+    lodash "^4.17.15"
+    mrm-core "^4.0.3"
+
 mrm-task-license@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/mrm-task-license/-/mrm-task-license-3.0.1.tgz#c5e817444d1e2629e6ef12bfbacf47e426f8aaed"
   integrity sha512-TPs/3uVCx/EAJtipRpHXC3DXH/AKH/8srovJu/2y0kfSluoDPv3voG2vnRCxrAq947PRbYouzr4Fe1a4R+kz4g==
   dependencies:
     mrm-core "^4.0.0"
+    user-meta "^1.0.0"
+
+mrm-task-license@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/mrm-task-license/-/mrm-task-license-3.0.2.tgz#35e2285b0a7cce51577dcdb41a6a032cd3297b37"
+  integrity sha512-9S2K08pot9QZtwUyJhVcnTz2I+9FO0QcZ2n64EBvKVsZ4JxcHMcLmxzlyYi+SlRiN6mi66PfkmPGFXLGvhZNDg==
+  dependencies:
+    mrm-core "^4.0.3"
     user-meta "^1.0.0"
 
 mrm-task-lint-staged@^3.0.1:
@@ -4608,6 +4794,14 @@ mrm-task-lint-staged@^3.0.1:
     lodash "^4.17.15"
     mrm-core "^4.0.0"
 
+mrm-task-lint-staged@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/mrm-task-lint-staged/-/mrm-task-lint-staged-3.0.2.tgz#ac87d6f49d41102334ffe022fde977269393cefa"
+  integrity sha512-7bovp6nl0tri7haL33CYymJA3fkHvglgmDsQ2Iewa/L6x0taBvBhkftcMb5T6ewrVMN3aDGM5oykXeJOUR7cPQ==
+  dependencies:
+    lodash "^4.17.15"
+    mrm-core "^4.0.3"
+
 mrm-task-package@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/mrm-task-package/-/mrm-task-package-2.0.2.tgz#a8770cc7081a70b586cab3611f431b388afffb0f"
@@ -4615,6 +4809,15 @@ mrm-task-package@^2.0.2:
   dependencies:
     git-username "^1.0.0"
     mrm-core "^4.0.0"
+    user-meta "^1.0.0"
+
+mrm-task-package@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/mrm-task-package/-/mrm-task-package-2.0.3.tgz#088a718e23a7e85efc47539a3bcb5bdd0b8229b4"
+  integrity sha512-nZmOGLqhqotjmd+Po9QLz8vR1CRXaJjz62BtenK0j5vodPOmEiY/QXSHm7CH/D0AlkqCajcIzJMkKgaDx1laIg==
+  dependencies:
+    git-username "^1.0.0"
+    mrm-core "^4.0.3"
     user-meta "^1.0.0"
 
 mrm-task-prettier@^2.0.2:
@@ -4625,6 +4828,14 @@ mrm-task-prettier@^2.0.2:
     editorconfig-to-prettier "0.1.1"
     mrm-core "^4.0.0"
 
+mrm-task-prettier@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/mrm-task-prettier/-/mrm-task-prettier-2.0.3.tgz#37049dd81de1520d818765031c8fca1810d778a6"
+  integrity sha512-CP9le0bDyG8U/kwpyz57+dmO4zrWtjaj5bZK4NpWRI/iJyW7LugmBCms+18Qw6thgIW60Nr4azOAJLoOx6N/tQ==
+  dependencies:
+    editorconfig-to-prettier "0.1.1"
+    mrm-core "^4.0.3"
+
 mrm-task-readme@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/mrm-task-readme/-/mrm-task-readme-2.0.2.tgz#1c4707c1caa42ece44af788a330251f1f1b43f92"
@@ -4632,6 +4843,15 @@ mrm-task-readme@^2.0.2:
   dependencies:
     git-username "^1.0.0"
     mrm-core "^4.0.0"
+    user-meta "^1.0.0"
+
+mrm-task-readme@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/mrm-task-readme/-/mrm-task-readme-2.0.3.tgz#f759d732ac883e2215b0c0c8d8a5609e8f0528e0"
+  integrity sha512-eJYMWZzuuHeTA6Lqq3jokyfGD70Wl6Kmb53NY6DO8jeD3+Htx3qSPisCOD3tcUhbOHBAbFj4U4iFaPtlKXp6CQ==
+  dependencies:
+    git-username "^1.0.0"
+    mrm-core "^4.0.3"
     user-meta "^1.0.0"
 
 mrm-task-semantic-release@^3.0.2:
@@ -4642,6 +4862,14 @@ mrm-task-semantic-release@^3.0.2:
     git-username "^1.0.0"
     mrm-core "^4.0.0"
 
+mrm-task-semantic-release@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/mrm-task-semantic-release/-/mrm-task-semantic-release-3.0.3.tgz#0cc48a70affc64e83a45b5e8d55d50ca8472c08e"
+  integrity sha512-a88Yr/vp4sPKfElgQzn+xVmQJtUPXvFGKBQ2v3xv3zrN5glQLvs7GeehVVQ6Z4aSILpy1SPqmsQzMa/CT7/DKw==
+  dependencies:
+    git-username "^1.0.0"
+    mrm-core "^4.0.3"
+
 mrm-task-styleguidist@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/mrm-task-styleguidist/-/mrm-task-styleguidist-2.0.2.tgz#67d63a8426120a81bde7407f4f4898e8e2c7f799"
@@ -4649,12 +4877,26 @@ mrm-task-styleguidist@^2.0.2:
   dependencies:
     mrm-core "^4.0.0"
 
+mrm-task-styleguidist@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/mrm-task-styleguidist/-/mrm-task-styleguidist-2.0.3.tgz#975d0e83cfdfcbb49e9453a13077853018449d93"
+  integrity sha512-ZQBqdwo4fTd3FadZSl9n9LeS9Cwrqw767F/Mta19kxLKBtLf3zNmbkOAEYrh8wjRQbjWrVnu9jglG5R0ozl8rw==
+  dependencies:
+    mrm-core "^4.0.3"
+
 mrm-task-stylelint@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/mrm-task-stylelint/-/mrm-task-stylelint-3.0.2.tgz#ab78bbcae2466ae8e87acb04ca6f38514c159e60"
   integrity sha512-tef0uuZuOWCsKfZojO6Z5cTrkI2FnoOtY4ThWW7KWK9AGMq72DBGZ1F877+2GwglpsAxZTA9WYpHMrVjWVceLw==
   dependencies:
     mrm-core "^4.0.0"
+
+mrm-task-stylelint@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/mrm-task-stylelint/-/mrm-task-stylelint-3.0.3.tgz#6943edf3944e4cb7b227f9cc86b7125fdf84d912"
+  integrity sha512-qm//EuoCmXPombChT1oZ4PY6jF8m7SjCioZzY6WLmaNKaWTuertQP1AZ13dmY/npaE/ABdgKqWoKNpbnnqvdTA==
+  dependencies:
+    mrm-core "^4.0.3"
 
 mrm-task-travis@^2.0.2:
   version "2.0.2"
@@ -4666,12 +4908,29 @@ mrm-task-travis@^2.0.2:
     mrm-core "^4.0.0"
     semver-utils "^1.1.4"
 
+mrm-task-travis@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/mrm-task-travis/-/mrm-task-travis-2.0.3.tgz#e151db319029317fdb1a69b3299053513f87f121"
+  integrity sha512-Jq/2jWFGefez6Bn15f/lmMi0QAkqXsMg5ihvCCaUQhs2NhmH4AGi/ca0p8GsYqAQ4B4o9WOtEGaHEDG4eRKAzg==
+  dependencies:
+    git-username "^1.0.0"
+    lodash "^4.17.15"
+    mrm-core "^4.0.3"
+    semver-utils "^1.1.4"
+
 mrm-task-typescript@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/mrm-task-typescript/-/mrm-task-typescript-2.0.2.tgz#c34cc458c54abeb42feb2146576f807dae36b06d"
   integrity sha512-c+Sog1jAjaUhFh1d+ImIldbNENkjoZQo3T9BveMjn2/YEu5oB+opq9fhgblfe/LCIiWVrQbtWZt9affH4PozgQ==
   dependencies:
     mrm-core "^4.0.0"
+
+mrm-task-typescript@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/mrm-task-typescript/-/mrm-task-typescript-2.0.3.tgz#2b621e5524e2575690b70407a84e3ca4d55ae795"
+  integrity sha512-IyNXnGRe2Wx8O2vjTT3w/kNW0AmbKnyVvqMZlwVT1aH96ETlbCxHtQQ/+NH4mriBhLCGmhujtPiPFQ2bh50uiw==
+  dependencies:
+    mrm-core "^4.0.3"
 
 mrm@^2.1.0:
   version "2.1.0"
@@ -4690,6 +4949,29 @@ mrm@^2.1.0:
     minimist "^1.2.0"
     mrm-core "^4.0.2"
     mrm-preset-default "^2.0.3"
+    requireg "^0.2.2"
+    semver-utils "^1.1.4"
+    update-notifier "^3.0.1"
+    user-home "^2.0.0"
+    user-meta "^1.0.0"
+
+mrm@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/mrm/-/mrm-2.1.1.tgz#7b8bb670cd210a43c11a8d04f653909833ba6502"
+  integrity sha512-X+vvjY+X/1mm62f2x3UWaCFJh1+B3TsCEbnhT4hBOad2ocxatzKNiPsq6l+3ImmSK1+SbUjyEOEexE+ccucnmQ==
+  dependencies:
+    git-username "^1.0.0"
+    glob "^7.1.6"
+    inquirer "^7.0.4"
+    is-directory "^0.3.1"
+    kleur "^3.0.3"
+    listify "^1.0.0"
+    lodash "^4.17.15"
+    longest "^2.0.1"
+    middleearth-names "^1.1.0"
+    minimist "^1.2.0"
+    mrm-core "^4.0.3"
+    mrm-preset-default "^2.0.4"
     requireg "^0.2.2"
     semver-utils "^1.1.4"
     update-notifier "^3.0.1"
@@ -5477,6 +5759,11 @@ regenerator-runtime@^0.13.2:
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.2.tgz#32e59c9a6fb9b1a4aff09b4930ca2d4477343447"
   integrity sha512-S/TQAZJO+D3m9xeN1WTI8dLKBBiRgXBlTJvbWjCThHWZj9EvHK70Ff50/tYj2J/fvBY6JtFVwRuazHN2E7M9BA==
 
+regenerator-runtime@^0.13.4:
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.5.tgz#d878a1d094b4306d10b9096484b33ebd55e26697"
+  integrity sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
+
 regex-not@^1.0.0, regex-not@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/regex-not/-/regex-not-1.0.2.tgz#1f4ece27e00b0b65e0247a6810e6a85d83a5752c"
@@ -5654,7 +5941,7 @@ resolve@1.1.7:
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
   integrity sha1-IDEU2CrSxe2ejgQRs5ModeiJ6Xs=
 
-resolve@1.x, resolve@^1.1.6, resolve@^1.10.0, resolve@^1.10.1, resolve@^1.14.2, resolve@^1.3.2:
+resolve@1.x, resolve@^1.1.6, resolve@^1.10.0, resolve@^1.10.1, resolve@^1.14.2, resolve@^1.15.1, resolve@^1.3.2:
   version "1.15.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.15.1.tgz#27bdcdeffeaf2d6244b95bb0f9f4b4653451f3e8"
   integrity sha512-84oo6ZTtoTUpjgNEr5SJyzQhzL72gaRodsSfyxC/AXRvwu0Yse9H8eF9IpGo7b8YetZhlI6v7ZQ6bKBFV/6S7w==
@@ -6935,6 +7222,13 @@ xmlchars@^2.1.1:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
   integrity sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==
+
+xregexp@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/xregexp/-/xregexp-4.3.0.tgz#7e92e73d9174a99a59743f67a4ce879a04b5ae50"
+  integrity sha512-7jXDIFXh5yJ/orPn4SXjuVrWWoi4Cr8jfV1eHv9CixKSbU+jY4mxfrBwAuDvupPNKpMUY+FeIqsVw/JLT9+B8g==
+  dependencies:
+    "@babel/runtime-corejs3" "^7.8.3"
 
 xtend@~4.0.1:
   version "4.0.2"
