@@ -1,7 +1,8 @@
+import { sync as readPkgUp } from 'read-pkg-up'
 import { install, packageJson } from 'mrm-core'
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const pkg = require('../../package')
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+const { packageJson: pkg } = readPkgUp({ cwd: __dirname })!
 
 function task(): void {
   packageJson()

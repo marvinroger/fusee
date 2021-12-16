@@ -28,6 +28,7 @@ export const loadFusee = (
   const fuseePath = path.join(packagePath, FUSEE_FILE_NAME)
 
   try {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return require(fuseePath)
   } catch (_err) {
     throw new Error(

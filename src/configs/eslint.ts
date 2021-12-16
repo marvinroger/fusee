@@ -2,11 +2,6 @@ import path from 'path'
 
 import { HydratedFuseeOptions } from '../options'
 
-const config = {
-  root: true,
-  extends: ['@marvinroger/fusee/dist/entrypoints/eslint'],
-}
-
 enum Level {
   Off = 'off',
   Warn = 'warn',
@@ -22,7 +17,7 @@ export interface ESLintConfig {
   rules: {
     [rule: string]: Level | [Level, any]
   }
-  settings: any
+  settings: { react?: { version: string } }
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
@@ -88,7 +83,10 @@ export function buildGetEslintConfig(
   function get() {
     require('@rushstack/eslint-patch/modern-module-resolution')
 
-    return config
+    return {
+      root: true,
+      extends: [require.resolve('@marvinroger/fusee/dist/entrypoints/eslint')],
+    }
   }
 
   return get
