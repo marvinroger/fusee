@@ -1,16 +1,18 @@
 import { LINT_GLOB } from '../constants'
-import { FuseeParams } from '../fusee'
+import { HydratedFuseeOptions } from '../options'
 
-const makeConfig = (_fuseeParams: FuseeParams) => ({
+const makeConfig = (_hydratedFuseeOptions: HydratedFuseeOptions) => ({
   [LINT_GLOB]: [`fusee lint`],
 })
 
-export function buildGetLintStagedConfig(fuseeParams: FuseeParams) {
+export function buildGetLintStagedConfig(
+  hydratedFuseeOptions: HydratedFuseeOptions
+) {
   /**
    * Get the lint-staged configuration object
    */
   function get() {
-    return makeConfig(fuseeParams)
+    return makeConfig(hydratedFuseeOptions)
   }
 
   return get

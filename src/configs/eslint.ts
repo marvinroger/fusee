@@ -1,4 +1,11 @@
-import { FuseeParams } from '../fusee'
+import path from 'path'
+
+import { HydratedFuseeOptions } from '../options'
+
+const config = {
+  root: true,
+  extends: ['@marvinroger/fusee/dist/entrypoints/eslint'],
+}
 
 enum Level {
   Off = 'off',
@@ -8,8 +15,9 @@ enum Level {
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export interface ESLintConfig {
-  parser: string
-  plugins: string[]
+  parserOptions: {
+    project: string
+  }
   extends: string[]
   rules: {
     [rule: string]: Level | [Level, any]
@@ -18,20 +26,23 @@ export interface ESLintConfig {
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
-const makeConfig = ({ react }: FuseeParams) => {
+export const makeConfig = (
+  projectPath: string,
+  { react }: HydratedFuseeOptions
+) => {
   const config: ESLintConfig = {
-    parser: '@typescript-eslint/parser',
-    plugins: ['@typescript-eslint'],
-
+    parserOptions: {
+      project: path.join(projectPath, 'tsconfig.json'),
+    },
     extends: [
       'eslint:recommended',
-      'plugin:@typescript-eslint/eslint-recommended',
       'plugin:@typescript-eslint/recommended',
-      'prettier',
-      'prettier/@typescript-eslint',
+      'plugin:@typescript-eslint/recommended-requiring-type-checking',
       'plugin:promise/recommended',
       'plugin:node/recommended-module',
       'plugin:jest/recommended',
+      'plugin:jest/style',
+      'plugin:prettier/recommended',
     ],
 
     rules: {
@@ -58,9 +69,7 @@ const makeConfig = ({ react }: FuseeParams) => {
     config.rules['react/prop-types'] = Level.Off
 
     // React hooks
-    config.plugins.push('react-hooks')
-    config.rules['react-hooks/rules-of-hooks'] = Level.Error
-    config.rules['react-hooks/exhaustive-deps'] = Level.Warn
+    config.extends.push('plugin:react-hooks/recommended')
 
     // Accessibility
     config.extends.push('plugin:jsx-a11y/recommended')
@@ -69,12 +78,17 @@ const makeConfig = ({ react }: FuseeParams) => {
   return config
 }
 
-export function buildGetEslintConfig(fuseeParams: FuseeParams) {
+export function buildGetEslintConfig(
+  _hydratedFuseeOptions: HydratedFuseeOptions
+) {
   /**
-   * Get the ESLint configuration object
+   * Get the ESLint configuration object.
+   * Also, patch the ESLint module resolution, see https://www.npmjs.com/package/@rushstack/eslint-patch
    */
   function get() {
-    return makeConfig(fuseeParams)
+    require('@rushstack/eslint-patch/modern-module-resolution')
+
+    return config
   }
 
   return get

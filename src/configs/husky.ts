@@ -1,13 +1,14 @@
-import { FuseeParams } from '../fusee'
+import { HydratedFuseeOptions } from '../options'
 
 const config = {
   hooks: {
     'pre-commit': 'fusee run lint-staged',
-    'commit-msg': 'fusee run commitlint -- -E HUSKY_GIT_PARAMS',
   },
 }
 
-export function buildGetHuskyConfig(_fuseeParams: FuseeParams) {
+export function buildGetHuskyConfig(
+  _hydratedFuseeOptions: HydratedFuseeOptions
+) {
   /**
    * Get the Husky configuration object
    */

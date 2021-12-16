@@ -1,4 +1,3 @@
 {
-  "extends": "@marvinroger/fusee/tsconfig",
-  "include": ["src/index.ts"]
+  "extends": "@marvinroger/fusee/typescript/node14"
 }

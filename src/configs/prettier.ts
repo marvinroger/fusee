@@ -1,4 +1,4 @@
-import { FuseeParams } from '../fusee'
+import { HydratedFuseeOptions } from '../options'
 
 const config = {
   singleQuote: true,
@@ -6,7 +6,9 @@ const config = {
   semi: false,
 }
 
-export function buildGetPrettierConfig(_fuseeParams: FuseeParams) {
+export function buildGetPrettierConfig(
+  _hydratedFuseeOptions: HydratedFuseeOptions
+) {
   /**
    * Get the Prettier configuration object
    */

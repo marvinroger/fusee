@@ -1,6 +1,5 @@
 ### App ###
 
-/pkg/
 /dist/
 
 ### Node ###
@@ -16,6 +15,16 @@ yarn-error.log*
 # Dependency directories
 
 node_modules/
+
+# Yarn
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 ### OS ###
 

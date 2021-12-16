@@ -4,7 +4,6 @@ import * as path from 'path'
 const ASSETS_DIR = path.resolve(__dirname, '../../../assets')
 
 const FILES = [
-  '.commitlintrc.js',
   '.editorconfig',
   '.eslintrc.js',
   '.gitignore',
@@ -14,6 +13,7 @@ const FILES = [
   'jest.config.js',
   '.lintstagedrc.js',
   'tsconfig.json',
+  'tsconfig.build.json',
 ]
 
 function task(): void {

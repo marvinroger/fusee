@@ -1,22 +1,12 @@
-import { defaults } from 'jest-config'
-import { FuseeParams } from '../fusee'
-
-const BUILT_PACKAGE_DIR = '/pkg/'
+import { HydratedFuseeOptions } from '../options'
 
 const config = {
   preset: 'ts-jest',
-
-  testPathIgnorePatterns: [
-    ...defaults.testPathIgnorePatterns,
-    BUILT_PACKAGE_DIR,
-  ],
-  modulePathIgnorePatterns: [
-    ...defaults.modulePathIgnorePatterns,
-    BUILT_PACKAGE_DIR,
-  ],
 }
 
-export function buildGetJestConfig(_fuseeParams: FuseeParams) {
+export function buildGetJestConfig(
+  _hydratedFuseeOptions: HydratedFuseeOptions
+) {
   /**
    * Get the Jest configuration object
    */

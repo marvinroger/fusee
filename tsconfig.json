@@ -1,9 +1,6 @@
 {
+  "extends": "./typescript/node12",
   "compilerOptions": {
-    "target": "es2018",
-    "module": "esnext",
-    "strict": true,
-    "declaration": true,
-    "incremental": true
+    "types": ["node"]
   }
 }

@@ -21,8 +21,6 @@ It makes use of the following stack:
 - [Jest](https://jestjs.io/) for testing
 - [TypeDoc](https://typedoc.org/) for documentation generation
 - [Husky](https://github.com/typicode/husky) / [lint-staged](https://github.com/okonet/lint-staged) for Git hooks
-- [Commitizen](https://github.com/commitizen/cz-cli) / [commitlint](https://github.com/conventional-changelog/commitlint) for Git commit messages ([Conventional Commits](https://www.conventionalcommits.org) format)
-- [Standard Version](https://github.com/conventional-changelog/standard-version) for release versioning and CHANGELOG generation
 
 ## Install
 
@@ -42,8 +40,7 @@ yarn lint [files...]
 Lint the code with ESlint and Prettier, trying to fix what's fixable.
 This runs `eslint --fix` and `prettier --write` on:
 
-- `src/**/*.ts` if not a monorepo
-- `packages/**/src/**/*.ts` if monorepo
+- `src/**/*.ts`
 - Only given files if a list of files is supplied (this is how lint-staged is setup)
 
 The ESLint config can be found at ⚙ [src/configs/eslint.ts](src/configs/eslint.ts), and
@@ -56,8 +53,7 @@ yarn test
 ```
 
 Test the code with Jest.
-This runs jest `--passWithNoTests` with the default Jest config, with TS supported and with
-the `/pkg/` path excluded.
+This runs jest `--passWithNoTests` with the default Jest config.
 
 The Jest config can be found at ⚙ [src/configs/jest.ts](src/configs/jest.ts).
 
@@ -71,30 +67,12 @@ Generate the HTML docs from the TypeScript code, into the `docs/` directory.
 
 **Note:** Due to a TypeDoc restriction, every single exported method will be documented (even if not exported from the entry-point). To ignore such methods, add a `@hidden` annotation.
 
----
-
-```bash
-yarn commit
-```
-
-Commit with a [Conventional Commits](https://www.conventionalcommits.org) compatible format.
-
----
-
-```bash
-yarn release
-```
-
-Bump `package.json` according to the commits, update `CHANGELOG.md` and tag a new release.
-
 ## Installed Git hooks
 
 The Husky config can be found at ⚙ [src/configs/husky.ts](src/configs/husky.ts).
 The following hooks are set:
 
 - `pre-commit`: This runs `lint-staged` with the config at ⚙ [src/configs/lint-staged.ts](src/configs/lint-staged.ts). Whenever a file matches the `*.{ts,tsx,js,jsx}` pattern, the `lint` script will be ran on these files, fixing what's fixable. If the lint is unsuccessful and it cannot be auto-fixed, the commit will be aborted.
-
-- `commit-msg`: This runs `commitlint`, checking the message against the [Conventional Commits](https://www.conventionalcommits.org) format. If it fails, the commit is aborted.
 
 There is no `pre-push` hook, as it might take too long to build or test the project.
 These checks should be done on the CI.
