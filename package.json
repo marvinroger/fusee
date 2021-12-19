@@ -1,6 +1,6 @@
 {
   "name": "@marvinroger/fusee",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "This module provides tooling to lint, format, test and write JS modules.",
   "homepage": "https://github.com/marvinroger/fusee",
   "bugs": "https://github.com/marvinroger/fusee/issues",
@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.19.0",
-    "@marvinroger/fusee": "^4.0.0",
+    "@marvinroger/fusee": "^4.0.1",
     "@types/node": "^17.0.0",
     "eslint": "^8.5.0",
     "husky": "^4.3.8",

@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.1
+
+### Patch Changes
+
+- 1fae608: Fix peer dependencies range
+
 ## 4.0.0
 
 ### Major Changes
