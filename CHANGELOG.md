@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.3
+
+### Patch Changes
+
+- 2975c80: Resolve fusee file relative to the ESLint file
+
 ## 4.0.2
 
 ### Patch Changes
