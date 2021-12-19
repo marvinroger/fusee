@@ -10,6 +10,7 @@ enum Level {
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export interface ESLintConfig {
+  ignorePatterns: string[]
   parserOptions: {
     project: string
   }
@@ -26,6 +27,7 @@ export const makeConfig = (
   { react }: HydratedFuseeOptions
 ) => {
   const config: ESLintConfig = {
+    ignorePatterns: ['/*.js'],
     parserOptions: {
       project: path.join(projectPath, 'tsconfig.json'),
     },
