@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.2
+
+### Patch Changes
+
+- c8ff57a: Update eslint-plugin-promise which fixed its eslint peer dependency range
+
 ## 4.0.1
 
 ### Patch Changes
