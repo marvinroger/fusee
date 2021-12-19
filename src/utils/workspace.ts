@@ -5,8 +5,8 @@ import { buildFusee } from '../fusee'
 
 const FUSEE_FILE_NAME = 'fusee.js'
 
-export const readPackage = () => {
-  const pkg = readPackageUpSync()
+export const readPackage = (relativeTo: string) => {
+  const pkg = readPackageUpSync({ cwd: relativeTo })
 
   if (!pkg)
     throw Error(
@@ -37,8 +37,8 @@ export const loadFusee = (
   }
 }
 
-export const loadPackageAndFusee = () => {
-  const pkg = readPackage()
+export const loadPackageAndFusee = (relativeTo: string = process.cwd()) => {
+  const pkg = readPackage(relativeTo)
   const fusee = loadFusee(pkg.path)
 
   return { pkg, fusee }

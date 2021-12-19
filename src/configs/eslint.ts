@@ -22,6 +22,11 @@ export interface ESLintConfig {
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
+let projectDirectory = process.cwd()
+export const getProjectDirectory = () => projectDirectory
+const setProjectDirectory = (projectDirectory_: string) =>
+  (projectDirectory = projectDirectory_)
+
 export const makeConfig = (
   projectPath: string,
   { react }: HydratedFuseeOptions
@@ -84,6 +89,8 @@ export function buildGetEslintConfig(
    */
   function get(projectDirectory: string) {
     require('@rushstack/eslint-patch/modern-module-resolution')
+
+    setProjectDirectory(projectDirectory)
 
     return {
       root: true,
