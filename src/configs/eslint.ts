@@ -80,12 +80,16 @@ export function buildGetEslintConfig(
    * Get the ESLint configuration object.
    * Also, patch the ESLint module resolution, see https://www.npmjs.com/package/@rushstack/eslint-patch
    */
-  function get() {
+  function get(projectDirectory: string) {
     require('@rushstack/eslint-patch/modern-module-resolution')
 
     return {
       root: true,
-      extends: [require.resolve('@marvinroger/fusee/dist/entrypoints/eslint')],
+      extends: [
+        require.resolve('@marvinroger/fusee/dist/entrypoints/eslint', {
+          paths: [projectDirectory],
+        }),
+      ],
     }
   }
 
