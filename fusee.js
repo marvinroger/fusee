@@ -1,4 +1,1 @@
-module.exports = require('@marvinroger/fusee').buildFusee({
-  monorepo: false,
-  react: false,
-})
+module.exports = require('@marvinroger/fusee').buildFusee()

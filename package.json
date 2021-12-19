@@ -1,6 +1,6 @@
 {
   "name": "@marvinroger/fusee",
-  "version": "4.0.0-beta.3",
+  "version": "4.0.0-beta.5",
   "description": "This module provides tooling to lint, format, test and write JS modules.",
   "homepage": "https://github.com/marvinroger/fusee",
   "bugs": "https://github.com/marvinroger/fusee/issues",
@@ -21,7 +21,7 @@
     "build": "tsc --project ./tsconfig.build.json",
     "lint": "fusee lint",
     "test": "fusee test",
-    "prepublishOnly": "yarn clean && yarn lint && yarn build && yarn test"
+    "prepublishOnly": "yarn clean && yarn build && yarn lint && yarn test"
   },
   "bin": "./dist/entrypoints/cli.js",
   "engines": {
@@ -49,7 +49,7 @@
     "typedoc": "^0.22.10"
   },
   "devDependencies": {
-    "@marvinroger/fusee": "^4.0.0-beta.3",
+    "@marvinroger/fusee": "^4.0.0-beta.5",
     "@types/node": "^17.0.0",
     "eslint": "^8.4.1",
     "husky": "^4.3.8",

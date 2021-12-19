@@ -5,7 +5,7 @@ import { buildGetJestConfig } from './configs/jest'
 import { buildGetLintStagedConfig } from './configs/lint-staged'
 import { buildGetPrettierConfig } from './configs/prettier'
 
-export function buildFusee(options: FuseeOptions) {
+export function buildFusee(options: FuseeOptions = {}) {
   const hydratedOptions = hydrateOptions(options)
 
   return {
